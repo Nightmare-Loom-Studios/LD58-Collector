@@ -1,0 +1,9 @@
+extends Node
+
+func _ready() -> void:
+    UnoInput.addInput('move_forward', KEY_W)
+    UnoInput.addInput('move_left', KEY_A)
+    UnoInput.addInput('move_backward', KEY_S)
+    UnoInput.addInput('move_right', KEY_D)
+    UnoInput.addInput('jump', KEY_SPACE)
+    UnoInput.addInput('grab', KEY_Q)

@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://dq83vcp4cby6t"]
+
+[ext_resource type="Script" uid="uid://c6n3k82vjhw15" path="res://addons/uno_plugin/nodes/UnoWorld.gd" id="1_wowgv"]
+[ext_resource type="Script" uid="uid://b8petknwsxmp8" path="res://addons/uno_plugin/nodes/UnoPlayer/UnoPlayer.gd" id="2_ykdcs"]
+[ext_resource type="Texture2D" uid="uid://b70qt028fxals" path="res://game/entities/player/player_debug.webp" id="3_gy5jl"]
+[ext_resource type="Script" uid="uid://c0b0a63n3n5t" path="res://game/entities/player/CarryBehavior.gd" id="3_l4dfk"]
+[ext_resource type="Script" uid="uid://djr46fbmples0" path="res://addons/uno_plugin/nodes/UnoCamera.gd" id="4_l4dfk"]
+[ext_resource type="PackedScene" uid="uid://ckq2crmlk7evm" path="res://game/entities/valuables/heavy/tv.glb" id="5_ykdcs"]
+[ext_resource type="Script" uid="uid://dvn52k433rimg" path="res://game/entities/valuables/heavy/CarriableBehavior.gd" id="7_l4dfk"]
+
+[sub_resource type="Environment" id="Environment_j4u14"]
+background_mode = 1
+background_energy_multiplier = 0.0
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ee863"]
+size = Vector2(100, 100)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j4u14"]
+points = PackedVector3Array(-50, 0, -50, -50, 0, 50, 50, 0, -50, 50, 0, 50)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_l4dfk"]
+points = PackedVector3Array(6.999217, 4.999999, 0.999902, 5.498825, -7.0010767, 1.5, 5.6288176, -7.0176196, 1.5, 7.257635, 4.965642, 0.999902, 6.999217, 4.999999, -1.0001957, -7.000783, 4.999999, 0.999902, -5.5003915, -7.0010767, 1.5, 5.7494125, -7.0672474, 1.5, 7.498825, 4.8651133, 0.999902, 7.257635, 4.965642, -1.0001957, 5.6288176, -7.0176196, -1.5, 5.498825, -7.0010767, -1.5, -7.000783, 4.999999, -1.0001957, -7.259201, 4.965642, 0.999902, -5.6303835, -7.0176196, 1.5, 5.8527803, -7.147416, 1.5, 7.7055597, 4.706049, 0.999902, 7.498825, 4.8651133, -1.0001957, 5.7494125, -7.0672474, -1.5, -5.5003915, -7.0010767, -1.5, -5.6303835, -7.0176196, -1.5, -7.259201, 4.965642, -1.0001957, -7.5003915, 4.8651133, 0.999902, -5.750979, -7.0672474, 1.5, 5.9326544, -7.250489, 1.5, 7.8653097, 4.499902, 0.999902, 7.7055597, 4.706049, -1.0001957, 5.8527803, -7.147416, -1.5, -5.750979, -7.0672474, -1.5, -7.5003915, 4.8651133, -1.0001957, -7.707126, 4.706049, 0.999902, -5.8543463, -7.147416, 1.5, 5.982772, -7.3713784, 1.5, 7.8653097, 4.499902, -1.0001957, 7.9655447, 4.2581244, 0.999902, 5.9326544, -7.250489, -1.5, -5.8543463, -7.147416, -1.5, -7.707126, 4.706049, -1.0001957, -7.8668756, 4.499902, 0.999902, -5.934221, -7.250489, 1.5, 6, -7.5011744, 1.5, 8, 3.9998035, 0.999902, 7.9655447, 4.2581244, -1.0001957, 5.982772, -7.3713784, -1.5, -5.934221, -7.250489, -1.5, -7.8668756, 4.499902, -1.0001957, -7.9671106, 4.2581244, 0.999902, -5.9843383, -7.3713784, 1.5, 5.982772, -7.6296988, 1.5, 7.9655447, -4.2600822, 0.999902, 8, -4.0004897, 0.999902, 8, 3.9998035, -1.0001957, 6, -7.5011744, -1.5, -5.9843383, -7.3713784, -1.5, -7.9671106, 4.2581244, -1.0001957, -8, 3.9998035, 0.999902, -6, -7.5011744, 1.5, 5.9326544, -7.7505875, 1.5, 7.8653097, -4.5005875, 0.999902, 7.9655447, -4.2600822, -1.0001957, 8, -4.0004897, -1.0001957, 5.982772, -7.6296988, -1.5, -6, -7.5011744, -1.5, -8, 3.9998035, -1.0001957, -8, -4.0004897, 0.999902, -5.9843383, -7.6296988, 1.5, 5.9326544, -7.7505875, -1.5, 5.8527803, -7.853661, 1.5, 7.8653097, -4.5005875, -1.0001957, -5.9843383, -7.6296988, -1.5, -8, -4.0004897, -1.0001957, -7.9671106, -4.2600822, 0.999902, -5.934221, -7.7505875, 1.5, 5.8527803, -7.853661, -1.5, 5.7494125, -7.9338293, 1.5, -5.934221, -7.7505875, -1.5, -7.9671106, -4.2600822, -1.0001957, -7.8668756, -4.5005875, 0.999902, -5.8543463, -7.853661, 1.5, 5.7494125, -7.9338293, -1.5, 5.6288176, -7.983457, 1.5, -7.8668756, -4.5005875, -1.0001957, -5.8543463, -7.853661, -1.5, -5.750979, -7.9338293, 1.5, 5.6288176, -7.983457, -1.5, 5.498825, -8, 1.5, -5.750979, -7.9338293, -1.5, -5.6303835, -7.983457, 1.5, 5.498825, -8, -1.5, -5.5003915, -8, 1.5, -5.6303835, -7.983457, -1.5, -5.5003915, -8, -1.5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6ovqv"]
+radius = 4.0
+height = 12.0
+
+[node name="Game" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j4u14")
+
+[node name="UnoWorld" type="Node3D" parent="."]
+script = ExtResource("1_wowgv")
+metadata/_custom_type_script = "uid://c6n3k82vjhw15"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="UnoWorld"]
+mesh = SubResource("PlaneMesh_ee863")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="UnoWorld/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="UnoWorld/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_j4u14")
+
+[node name="TV" type="RigidBody3D" parent="UnoWorld"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 4, 12)
+mass = 5.0
+
+[node name="tv" parent="UnoWorld/TV" instance=ExtResource("5_ykdcs")]
+
+[node name="CarriableBehavior" type="Node" parent="UnoWorld/TV"]
+script = ExtResource("7_l4dfk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="UnoWorld/TV"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_l4dfk")
+
+[node name="TV2" type="RigidBody3D" parent="UnoWorld"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 4, 11)
+mass = 5.0
+
+[node name="tv" parent="UnoWorld/TV2" instance=ExtResource("5_ykdcs")]
+
+[node name="CarriableBehavior" type="Node" parent="UnoWorld/TV2"]
+script = ExtResource("7_l4dfk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="UnoWorld/TV2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_l4dfk")
+
+[node name="UnoPlayer" type="CharacterBody3D" parent="."]
+script = ExtResource("2_ykdcs")
+metadata/_custom_type_script = "uid://b8petknwsxmp8"
+
+[node name="CarryBehavior" type="Node" parent="UnoPlayer"]
+script = ExtResource("3_l4dfk")
+
+[node name="Sprite3D" type="Sprite3D" parent="UnoPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+pixel_size = 0.5
+billboard = 1
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_gy5jl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="UnoPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+shape = SubResource("CapsuleShape3D_6ovqv")
+
+[node name="UnoCamera" type="Camera3D" parent="." node_paths=PackedStringArray("followingObject")]
+script = ExtResource("4_l4dfk")
+followingObject = NodePath("../UnoPlayer")
+cameraDistance = 40.0
+metadata/_custom_type_script = "uid://djr46fbmples0"
