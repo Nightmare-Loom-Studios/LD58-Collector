@@ -7,3 +7,32 @@ OK ---- Animation gain argent
 OK --- Ombre sous perso
 OK --- Taper armoire
 
+OK --- Afficher contenance aspirateur
+OK --- Pouvoir vider aspirateur avec I
+OK --- Fait pop un sac
+
+
+Map simple avec items
+    Cuisine
+        Sol damier
+        Vin
+        Frigo
+        Couverts
+    Jardin
+        Abri de jardin
+        Tomate
+        Carottes
+    Chambre
+        Bague
+        Collier
+        Costard
+
+Appartement avec améliorations
+Polish mouvement
+Intro et fin
+
+Musiques et audio (en journée obligatoire)
+Particules
+
+Opt. (extérieur)
+Opt. Chien qui attaque

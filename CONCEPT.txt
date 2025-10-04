@@ -27,7 +27,9 @@ L'argent peut servir à améliorer son appartement pour débloquer des skills:
 XXXX - sac plus grand
 - crochetage (opt.)
 - + de temps
+- collectionneur pièce (augmente valeur pièces)
 - lampe torche (opt.)
+- (opt. mini jeu carte)
 
 Idées vrac:
 On voit la ville derrière l'appart qui s'appauvrir (au début maisons, puis immeubles, puis tentes)

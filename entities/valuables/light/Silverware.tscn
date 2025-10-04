@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://2w8nrkw2rqnl"]
+
+[ext_resource type="PackedScene" uid="uid://cqbp5h0s52sq3" path="res://game/entities/valuables/light/silverware.glb" id="1_8lxga"]
+[ext_resource type="Script" uid="uid://d3417uf4efjd" path="res://game/entities/valuables/light/GatherableBehavior.gd" id="1_q7650"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q7650"]
+points = PackedVector3Array(-4.5, -1.500783, -0.5, -4.5, -1.500783, 0.5, -4.5, 0.49960804, -0.5, -3.5002937, -8, -0.5, -4.5, 0.49960804, 0.5, -3.5002937, -8, 0.5, -4.000489, 1.999608, -0.5, 1.4996085, -8, -0.5, -4.000489, 1.999608, 0.5, 1.4996085, -8, 0.5, -3.0000978, 4, -0.5, 2.5, -0.0007829666, -0.5, -3.0000978, 4, 0.5, 2.5, -0.0007829666, 0.5, 1.999804, 1.999608, -0.5, 2.5, 1, -0.5, 1.999804, 1.999608, 0.5, 2.5, 1, 0.5)
+
+[node name="Silverware" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_q7650")
+
+[node name="model" parent="." instance=ExtResource("1_8lxga")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_q7650")

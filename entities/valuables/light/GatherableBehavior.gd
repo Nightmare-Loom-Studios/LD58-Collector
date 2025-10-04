@@ -16,6 +16,7 @@ func _onGathered() -> void:
         .property(self, 'scale', Vector3.ONE*.01, .5)\
         .callback(func(): self.queue_free())
 
-    UnoCamera.HUD.emit_signal('add_money', value)
+
+    UnoWorld.GAME.amountSucked += value
 
     remove_from_group('gatherable')

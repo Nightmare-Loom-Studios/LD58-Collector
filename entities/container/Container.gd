@@ -16,7 +16,7 @@ func _ready() -> void:
     hitted.connect(_onHitted)
 
 func _onHitted() -> void:
-    UnoWorld.CAMERA.shake(UnoCamera.SHAKE_AMPL_TIGHT, UnoCamera.SHAKE_SPEED_QUICK, 2)
+    UnoWorld.CAMERA.shake(UnoCamera.SHAKE_AMPL_WIDE, UnoCamera.SHAKE_SPEED_QUICK, 2)
     UnoWorld.CAMERA.HUD.emit_signal('add_money', randf_range(minValue, maxValue))
 
     hitPoints -= 1
