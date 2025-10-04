@@ -5,5 +5,5 @@ OK --- Peut déposer objets dans la zone
 OK ---- Animation gain argent
 
 OK --- Ombre sous perso
+OK --- Taper armoire
 
-Taper objet qui lâche loot

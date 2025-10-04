@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cvt7g1tc761wa" path="res://game/entities/player/player.scn" id="6_og0sj"]
 [ext_resource type="Script" uid="uid://dvn52k433rimg" path="res://game/entities/valuables/heavy/CarriableBehavior.gd" id="7_l4dfk"]
 [ext_resource type="Script" uid="uid://b40xan6043iu" path="res://game/entities/hud/HUD.gd" id="9_4osd1"]
-[ext_resource type="PackedScene" uid="uid://bldn812v7ayb7" path="res://game/entities/storage/drawer.glb" id="9_ngn8n"]
 [ext_resource type="PackedScene" uid="uid://b38yn4axamrfl" path="res://game/entities/valuables/light/CoinGold.scn" id="10_ru4j2"]
+[ext_resource type="PackedScene" uid="uid://dp4s2b1lyrsqn" path="res://game/entities/container/Drawer.tscn" id="12_ngn8n"]
 
 [sub_resource type="Environment" id="Environment_j4u14"]
 background_mode = 1
@@ -142,12 +142,24 @@ collision_layer = 4
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 31, 8.033517, 3.793045)
 collision_layer = 4
 
+[node name="Drawer" parent="UnoWorld" instance=ExtResource("12_ngn8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -29)
+
+[node name="Drawer4" parent="UnoWorld" instance=ExtResource("12_ngn8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 4, -29)
+
+[node name="Drawer5" parent="UnoWorld" instance=ExtResource("12_ngn8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4, -29)
+
+[node name="Drawer2" parent="UnoWorld" instance=ExtResource("12_ngn8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 4, -29)
+
+[node name="Drawer3" parent="UnoWorld" instance=ExtResource("12_ngn8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 4, -29)
+
 [node name="CoinSilver8" parent="UnoWorld" instance=ExtResource("6_4osd1")]
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 21, 3.633593, -12.627692)
 collision_layer = 4
-
-[node name="drawer" parent="UnoWorld" instance=ExtResource("9_ngn8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -37)
 
 [node name="UnoPlayer" parent="." instance=ExtResource("6_og0sj")]
 collision_layer = 2
@@ -155,9 +167,11 @@ collision_layer = 2
 [node name="UnoCamera" type="Camera3D" parent="." node_paths=PackedStringArray("followingObject")]
 fov = 60.0
 script = ExtResource("4_l4dfk")
-followingObject = NodePath("../UnoPlayer")
 cameraDistance = 50.0
 vectorOffset = Vector3(0, 2, 2)
+cameraRayEnabled = null
+cameraRayCollisionMask = null
+followingObject = NodePath("../UnoPlayer")
 metadata/_custom_type_script = "uid://djr46fbmples0"
 
 [node name="HUD" type="CanvasLayer" parent="UnoCamera"]

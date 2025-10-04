@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bldn812v7ayb7"
-path="res://.godot/imported/drawer.glb-ecabebbd04a754267906f0eef9305204.scn"
+path="res://.godot/imported/drawer.glb-2260f834cf6d6446ef001dffa9b046d7.scn"
 
 [deps]
 
-source_file="res://game/entities/storage/drawer.glb"
-dest_files=["res://.godot/imported/drawer.glb-ecabebbd04a754267906f0eef9305204.scn"]
+source_file="res://game/entities/container/drawer.glb"
+dest_files=["res://.godot/imported/drawer.glb-2260f834cf6d6446ef001dffa9b046d7.scn"]
 
 [params]
 
