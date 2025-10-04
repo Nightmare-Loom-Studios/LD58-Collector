@@ -1,12 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://dq83vcp4cby6t"]
+[gd_scene load_steps=16 format=3 uid="uid://dq83vcp4cby6t"]
 
+[ext_resource type="Script" uid="uid://dsa7m2f2bd55b" path="res://game/scripts/Game.gd" id="1_ru4j2"]
 [ext_resource type="Script" uid="uid://c6n3k82vjhw15" path="res://addons/uno_plugin/nodes/UnoWorld.gd" id="1_wowgv"]
-[ext_resource type="Script" uid="uid://b8petknwsxmp8" path="res://addons/uno_plugin/nodes/UnoPlayer/UnoPlayer.gd" id="2_ykdcs"]
-[ext_resource type="Texture2D" uid="uid://b70qt028fxals" path="res://game/entities/player/player_debug.webp" id="3_gy5jl"]
-[ext_resource type="Script" uid="uid://c0b0a63n3n5t" path="res://game/entities/player/CarryBehavior.gd" id="3_l4dfk"]
 [ext_resource type="Script" uid="uid://djr46fbmples0" path="res://addons/uno_plugin/nodes/UnoCamera.gd" id="4_l4dfk"]
+[ext_resource type="PackedScene" uid="uid://tix8rqykoqpg" path="res://game/entities/earn_area/earn_area.tscn" id="4_og0sj"]
 [ext_resource type="PackedScene" uid="uid://ckq2crmlk7evm" path="res://game/entities/valuables/heavy/tv.glb" id="5_ykdcs"]
+[ext_resource type="PackedScene" uid="uid://dh60nka52ecwf" path="res://game/entities/valuables/light/CoinSilver.scn" id="6_4osd1"]
+[ext_resource type="PackedScene" uid="uid://cvt7g1tc761wa" path="res://game/entities/player/player.scn" id="6_og0sj"]
 [ext_resource type="Script" uid="uid://dvn52k433rimg" path="res://game/entities/valuables/heavy/CarriableBehavior.gd" id="7_l4dfk"]
+[ext_resource type="Script" uid="uid://b40xan6043iu" path="res://game/entities/hud/HUD.gd" id="9_4osd1"]
+[ext_resource type="PackedScene" uid="uid://b38yn4axamrfl" path="res://game/entities/valuables/light/CoinGold.scn" id="10_ru4j2"]
 
 [sub_resource type="Environment" id="Environment_j4u14"]
 background_mode = 1
@@ -24,11 +27,14 @@ points = PackedVector3Array(-50, 0, -50, -50, 0, 50, 50, 0, -50, 50, 0, 50)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_l4dfk"]
 points = PackedVector3Array(6.999217, 4.999999, 0.999902, 5.498825, -7.0010767, 1.5, 5.6288176, -7.0176196, 1.5, 7.257635, 4.965642, 0.999902, 6.999217, 4.999999, -1.0001957, -7.000783, 4.999999, 0.999902, -5.5003915, -7.0010767, 1.5, 5.7494125, -7.0672474, 1.5, 7.498825, 4.8651133, 0.999902, 7.257635, 4.965642, -1.0001957, 5.6288176, -7.0176196, -1.5, 5.498825, -7.0010767, -1.5, -7.000783, 4.999999, -1.0001957, -7.259201, 4.965642, 0.999902, -5.6303835, -7.0176196, 1.5, 5.8527803, -7.147416, 1.5, 7.7055597, 4.706049, 0.999902, 7.498825, 4.8651133, -1.0001957, 5.7494125, -7.0672474, -1.5, -5.5003915, -7.0010767, -1.5, -5.6303835, -7.0176196, -1.5, -7.259201, 4.965642, -1.0001957, -7.5003915, 4.8651133, 0.999902, -5.750979, -7.0672474, 1.5, 5.9326544, -7.250489, 1.5, 7.8653097, 4.499902, 0.999902, 7.7055597, 4.706049, -1.0001957, 5.8527803, -7.147416, -1.5, -5.750979, -7.0672474, -1.5, -7.5003915, 4.8651133, -1.0001957, -7.707126, 4.706049, 0.999902, -5.8543463, -7.147416, 1.5, 5.982772, -7.3713784, 1.5, 7.8653097, 4.499902, -1.0001957, 7.9655447, 4.2581244, 0.999902, 5.9326544, -7.250489, -1.5, -5.8543463, -7.147416, -1.5, -7.707126, 4.706049, -1.0001957, -7.8668756, 4.499902, 0.999902, -5.934221, -7.250489, 1.5, 6, -7.5011744, 1.5, 8, 3.9998035, 0.999902, 7.9655447, 4.2581244, -1.0001957, 5.982772, -7.3713784, -1.5, -5.934221, -7.250489, -1.5, -7.8668756, 4.499902, -1.0001957, -7.9671106, 4.2581244, 0.999902, -5.9843383, -7.3713784, 1.5, 5.982772, -7.6296988, 1.5, 7.9655447, -4.2600822, 0.999902, 8, -4.0004897, 0.999902, 8, 3.9998035, -1.0001957, 6, -7.5011744, -1.5, -5.9843383, -7.3713784, -1.5, -7.9671106, 4.2581244, -1.0001957, -8, 3.9998035, 0.999902, -6, -7.5011744, 1.5, 5.9326544, -7.7505875, 1.5, 7.8653097, -4.5005875, 0.999902, 7.9655447, -4.2600822, -1.0001957, 8, -4.0004897, -1.0001957, 5.982772, -7.6296988, -1.5, -6, -7.5011744, -1.5, -8, 3.9998035, -1.0001957, -8, -4.0004897, 0.999902, -5.9843383, -7.6296988, 1.5, 5.9326544, -7.7505875, -1.5, 5.8527803, -7.853661, 1.5, 7.8653097, -4.5005875, -1.0001957, -5.9843383, -7.6296988, -1.5, -8, -4.0004897, -1.0001957, -7.9671106, -4.2600822, 0.999902, -5.934221, -7.7505875, 1.5, 5.8527803, -7.853661, -1.5, 5.7494125, -7.9338293, 1.5, -5.934221, -7.7505875, -1.5, -7.9671106, -4.2600822, -1.0001957, -7.8668756, -4.5005875, 0.999902, -5.8543463, -7.853661, 1.5, 5.7494125, -7.9338293, -1.5, 5.6288176, -7.983457, 1.5, -7.8668756, -4.5005875, -1.0001957, -5.8543463, -7.853661, -1.5, -5.750979, -7.9338293, 1.5, 5.6288176, -7.983457, -1.5, 5.498825, -8, 1.5, -5.750979, -7.9338293, -1.5, -5.6303835, -7.983457, 1.5, 5.498825, -8, -1.5, -5.5003915, -8, 1.5, -5.6303835, -7.983457, -1.5, -5.5003915, -8, -1.5)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6ovqv"]
-radius = 4.0
-height = 12.0
+[sub_resource type="LabelSettings" id="LabelSettings_og0sj"]
+font_size = 32
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_ru4j2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_j4u14")
@@ -41,13 +47,15 @@ metadata/_custom_type_script = "uid://c6n3k82vjhw15"
 mesh = SubResource("PlaneMesh_ee863")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="UnoWorld/MeshInstance3D"]
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnoWorld/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_j4u14")
 
 [node name="TV" type="RigidBody3D" parent="UnoWorld"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 4, 12)
-mass = 5.0
+collision_mask = 3
+mass = 2.0
 
 [node name="tv" parent="UnoWorld/TV" instance=ExtResource("5_ykdcs")]
 
@@ -58,41 +66,92 @@ script = ExtResource("7_l4dfk")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_l4dfk")
 
-[node name="TV2" type="RigidBody3D" parent="UnoWorld"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 4, 11)
-mass = 5.0
+[node name="TV3" type="RigidBody3D" parent="UnoWorld"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 4, 21)
+collision_mask = 3
+mass = 2.0
 
-[node name="tv" parent="UnoWorld/TV2" instance=ExtResource("5_ykdcs")]
+[node name="tv" parent="UnoWorld/TV3" instance=ExtResource("5_ykdcs")]
 
-[node name="CarriableBehavior" type="Node" parent="UnoWorld/TV2"]
+[node name="CarriableBehavior" type="Node" parent="UnoWorld/TV3"]
 script = ExtResource("7_l4dfk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="UnoWorld/TV2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="UnoWorld/TV3"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_l4dfk")
 
-[node name="UnoPlayer" type="CharacterBody3D" parent="."]
-script = ExtResource("2_ykdcs")
-metadata/_custom_type_script = "uid://b8petknwsxmp8"
+[node name="EarnArea" parent="UnoWorld" instance=ExtResource("4_og0sj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 34)
 
-[node name="CarryBehavior" type="Node" parent="UnoPlayer"]
-script = ExtResource("3_l4dfk")
+[node name="CoinSilver" parent="UnoWorld" instance=ExtResource("6_4osd1")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 13, 7.7746973, 2.8271194)
+collision_layer = 4
 
-[node name="Sprite3D" type="Sprite3D" parent="UnoPlayer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
-pixel_size = 0.5
-billboard = 1
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("3_gy5jl")
+[node name="CoinSilver2" parent="UnoWorld" instance=ExtResource("6_4osd1")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 29, 4.41005, -9.729917)
+collision_layer = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="UnoPlayer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
-shape = SubResource("CapsuleShape3D_6ovqv")
+[node name="CoinSilver3" parent="UnoWorld" instance=ExtResource("6_4osd1")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 26, 9.327612, 8.622675)
+collision_layer = 4
+
+[node name="CoinSilver9" parent="UnoWorld" instance=ExtResource("10_ru4j2")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 26, 5.3252077, 1.4129059)
+collision_layer = 4
+
+[node name="CoinSilver10" parent="UnoWorld" instance=ExtResource("10_ru4j2")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 14, 9.207494, 15.901793)
+collision_layer = 4
+
+[node name="CoinSilver11" parent="UnoWorld" instance=ExtResource("10_ru4j2")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 23, 3.2546554, -6.314501)
+collision_layer = 4
+
+[node name="CoinSilver12" parent="UnoWorld" instance=ExtResource("10_ru4j2")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 39, 8.689856, 13.969941)
+collision_layer = 4
+
+[node name="CoinSilver13" parent="UnoWorld" instance=ExtResource("10_ru4j2")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 38, 1.184103, -14.041907)
+collision_layer = 4
+
+[node name="CoinSilver4" parent="UnoWorld" instance=ExtResource("6_4osd1")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 19, 11.915802, 18.281933)
+collision_layer = 4
+
+[node name="CoinSilver5" parent="UnoWorld" instance=ExtResource("6_4osd1")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 24, 12.69226, 21.17971)
+collision_layer = 4
+
+[node name="CoinSilver6" parent="UnoWorld" instance=ExtResource("6_4osd1")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 38, 8.551155, 5.724897)
+collision_layer = 4
+
+[node name="CoinSilver7" parent="UnoWorld" instance=ExtResource("6_4osd1")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 31, 8.033517, 3.793045)
+collision_layer = 4
+
+[node name="CoinSilver8" parent="UnoWorld" instance=ExtResource("6_4osd1")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 21, 3.633593, -12.627692)
+collision_layer = 4
+
+[node name="UnoPlayer" parent="." instance=ExtResource("6_og0sj")]
+collision_layer = 2
 
 [node name="UnoCamera" type="Camera3D" parent="." node_paths=PackedStringArray("followingObject")]
 script = ExtResource("4_l4dfk")
 followingObject = NodePath("../UnoPlayer")
 cameraDistance = 40.0
 metadata/_custom_type_script = "uid://djr46fbmples0"
+
+[node name="HUD" type="CanvasLayer" parent="UnoCamera"]
+script = ExtResource("9_4osd1")
+
+[node name="Money" type="Label" parent="UnoCamera/HUD"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 85.0
+offset_bottom = 42.0
+text = "0$"
+label_settings = SubResource("LabelSettings_og0sj")

@@ -17,6 +17,7 @@ Sur place:
 (opt) Les personnes vous empêchent de les saisir, peut les assommer
 Peut porter des objets lourds
 Petits objets dans le sac
+Meubles peuvent être frappés pour donner objets
 Doit être déposé dans un camion à l'entrée
 
 L'argent peut servir à améliorer son appartement pour débloquer des skills:

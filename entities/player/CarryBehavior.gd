@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
     if carriedNode.node != null: return
 
     for node: Node3D in parent.get_tree().get_nodes_in_group('carriable'):
-        if node.position.distance_to(parent.position) < 10:
+        if node.position.distance_to(parent.position) < 12:
             closestNode = node
             return
 

@@ -1,8 +1,8 @@
 v0:
 OK --- Perso avec mouvement caméra
 OK --- Peut attraper objets dans ses mains
-Peut déposer objets dans la zone
+OK --- Peut déposer objets dans la zone
+OK ---- Animation gain argent
 
-Peut mettre objet dans son inventaire
-Animation gain argent
-Temps limité
+Ombre sous perso
+Taper objet qui lâche argent

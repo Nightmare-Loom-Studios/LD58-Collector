@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://tix8rqykoqpg"]
+
+[ext_resource type="Script" uid="uid://bcm7kme7qvxhs" path="res://game/entities/earn_area/SellHeavyArea3D.gd" id="1_bxsa0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rghi1"]
+albedo_color = Color(0.98425525, 0.66850084, 0.3077247, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bxsa0"]
+material = SubResource("StandardMaterial3D_rghi1")
+size = Vector2(20, 20)
+
+[sub_resource type="Curve" id="Curve_rghi1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_bxsa0"]
+curve = SubResource("Curve_rghi1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rghi1"]
+emission_shape = 3
+emission_box_extents = Vector3(10, 1, 10)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+scale_min = 0.099999994
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_bxsa0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6ntu"]
+albedo_color = Color(0.9908641, 0.9753142, 4.3125154e-05, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bxsa0"]
+material = SubResource("StandardMaterial3D_r6ntu")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rghi1"]
+size = Vector3(20, 3, 20)
+
+[node name="EarnArea" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_bxsa0")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 20
+explosiveness = 0.2
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_rghi1")
+draw_pass_1 = SubResource("CylinderMesh_bxsa0")
+
+[node name="SellHeavyArea3D" type="Area3D" parent="."]
+script = ExtResource("1_bxsa0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SellHeavyArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_rghi1")
