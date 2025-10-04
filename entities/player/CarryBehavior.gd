@@ -16,6 +16,7 @@ func _input(event: InputEvent) -> void:
         elif closestNode: carriedNode.put(closestNode)
 
 func _process(delta: float) -> void:
+    UnoWorld.PLAYER.MVT_MAX_SPEED = 40 if carriedNode.node == null else 20 
     if carriedNode.node != null: return
 
     for node: Node3D in parent.get_tree().get_nodes_in_group('carriable'):

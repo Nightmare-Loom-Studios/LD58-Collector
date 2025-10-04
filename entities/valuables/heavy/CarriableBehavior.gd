@@ -26,7 +26,7 @@ func _onUncarried() -> void:
     isCarried = false
     UnoWorld.ROOT.delay(
         func():
-            parent.position = UnoWorld.PLAYER.global_position + Vector3(0, 10, 8),
+            parent.position = UnoWorld.PLAYER.global_position + Vector3(0, 10, 15),
         .1
     )
 

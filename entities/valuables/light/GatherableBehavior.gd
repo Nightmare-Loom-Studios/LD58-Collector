@@ -10,8 +10,10 @@ func _ready() -> void:
 
 func _onGathered() -> void:
     UnoTween.new()\
-        .parallel().property(self, 'scale', Vector3.ONE*.01, 1)\
-        .parallel().property(self, 'position:y', position.y + 5, .5)\
+        .setTrans(Tween.TRANS_SINE)\
+        .parallel().property(self, 'scale', Vector3.ONE*1.1, .1)\
+        .parallel().property(self, 'position:y', position.y + 5, .25)\
+        .property(self, 'scale', Vector3.ONE*.01, .5)\
         .callback(func(): self.queue_free())
 
     UnoCamera.HUD.emit_signal('add_money', value)

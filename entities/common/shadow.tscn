@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwgfvc21sbp4v"]
+
+[ext_resource type="Texture2D" uid="uid://cpds40ci1ruil" path="res://game/entities/player/PlayerShadow.webp" id="1_7c667"]
+[ext_resource type="Script" uid="uid://c3sewvdn6h3e1" path="res://game/entities/player/PlayerShadow.gd" id="2_rwwsu"]
+
+[node name="Shadow" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+top_level = true
+modulate = Color(1, 1, 1, 0.39215687)
+pixel_size = 0.5
+double_sided = false
+texture_filter = 0
+texture = ExtResource("1_7c667")
+script = ExtResource("2_rwwsu")

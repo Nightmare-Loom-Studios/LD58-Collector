@@ -4,5 +4,6 @@ OK --- Peut attraper objets dans ses mains
 OK --- Peut déposer objets dans la zone
 OK ---- Animation gain argent
 
-Ombre sous perso
-Taper objet qui lâche argent
+OK --- Ombre sous perso
+
+Taper objet qui lâche loot
