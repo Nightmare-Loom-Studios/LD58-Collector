@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dq83vcp4cby6t"]
+[gd_scene load_steps=11 format=3 uid="uid://dq83vcp4cby6t"]
 
 [ext_resource type="Script" uid="uid://dsa7m2f2bd55b" path="res://game/scripts/Game.gd" id="1_ru4j2"]
 [ext_resource type="Script" uid="uid://c6n3k82vjhw15" path="res://addons/uno_plugin/nodes/UnoWorld.gd" id="1_wowgv"]
@@ -23,6 +23,18 @@ outline_size = 12
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 0
 
+[sub_resource type="LabelSettings" id="LabelSettings_gy5jl"]
+font_size = 18
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ykdcs"]
+font_size = 14
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
 [node name="Game" type="Node3D"]
 script = ExtResource("1_ru4j2")
 
@@ -30,11 +42,11 @@ script = ExtResource("1_ru4j2")
 environment = SubResource("Environment_j4u14")
 
 [node name="OmniLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.296415, 0.95405614, 0.043760933, -0.10660405, -0.07858506, 0.9911912, 0.94909096, 0.28913885, 0.12499999, -29, 74, 0)
+transform = Transform3D(-0.296415, 0.95405614, 0.043761015, -0.10660404, -0.078585066, 0.9911912, 0.949091, 0.28913882, 0.12500003, 4, 74, 0)
 light_color = Color(1, 0.909, 0.79, 1)
 light_specular = 0.0
 shadow_enabled = true
-shadow_opacity = 0.8
+shadow_opacity = 0.5
 directional_shadow_mode = 0
 directional_shadow_max_distance = 500.0
 
@@ -90,4 +102,41 @@ offset_bottom = -3.0
 grow_vertical = 0
 text = "0"
 label_settings = SubResource("LabelSettings_og0sj")
+vertical_alignment = 2
+
+[node name="UpgradeBg" type="ColorRect" parent="UnoCamera/HUD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -65.0
+offset_right = 1144.0
+grow_vertical = 0
+color = Color(0, 0, 0, 0.88235295)
+
+[node name="UpgradeText" type="Label" parent="UnoCamera/HUD"]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -64.0
+offset_right = 148.0
+offset_bottom = -9.0
+grow_vertical = 0
+text = "SDZAEZAE"
+label_settings = SubResource("LabelSettings_gy5jl")
+vertical_alignment = 2
+
+[node name="UpgradeTextFull" type="Label" parent="UnoCamera/HUD"]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -94.0
+offset_right = 134.0
+offset_bottom = -39.0
+grow_vertical = 0
+text = "aeazezaezaezae"
+label_settings = SubResource("LabelSettings_ykdcs")
 vertical_alignment = 2

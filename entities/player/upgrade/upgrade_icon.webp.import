@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d20svn4h8rob8"
-path="res://.godot/imported/couch_couch.png-70df9434b9dfb2b838cdb3835add86ad.ctex"
+uid="uid://csb4emxf61u75"
+path="res://.godot/imported/upgrade_icon.webp-ed073cc327b092fca492914dd325c8e7.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "d65b9cd03cd272c8b45b109ed4b8cc4e"
 }
 
 [deps]
 
-source_file="res://game/world/level1/couch_couch.png"
-dest_files=["res://.godot/imported/couch_couch.png-70df9434b9dfb2b838cdb3835add86ad.ctex"]
+source_file="res://game/entities/player/upgrade/upgrade_icon.webp"
+dest_files=["res://.godot/imported/upgrade_icon.webp-ed073cc327b092fca492914dd325c8e7.ctex"]
 
 [params]
 

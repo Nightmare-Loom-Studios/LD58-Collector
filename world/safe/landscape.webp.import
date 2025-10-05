@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d20svn4h8rob8"
-path="res://.godot/imported/couch_couch.png-70df9434b9dfb2b838cdb3835add86ad.ctex"
+uid="uid://bl6l7xp3dpc0u"
+path="res://.godot/imported/landscape.webp-86ede97ce1b5d7824bbd5034f8ddcfca.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "d65b9cd03cd272c8b45b109ed4b8cc4e"
 }
 
 [deps]
 
-source_file="res://game/world/level1/couch_couch.png"
-dest_files=["res://.godot/imported/couch_couch.png-70df9434b9dfb2b838cdb3835add86ad.ctex"]
+source_file="res://game/world/safe/landscape.webp"
+dest_files=["res://.godot/imported/landscape.webp-86ede97ce1b5d7824bbd5034f8ddcfca.ctex"]
 
 [params]
 

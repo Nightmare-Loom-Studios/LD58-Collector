@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d20svn4h8rob8"
-path="res://.godot/imported/couch_couch.png-70df9434b9dfb2b838cdb3835add86ad.ctex"
+uid="uid://dfrca8fos8dsv"
+path="res://.godot/imported/vacuum_vacuum.png-be037418f220998c078c4d8f12821e77.ctex"
 metadata={
 "vram_texture": false
 }
@@ -13,8 +13,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://game/world/level1/couch_couch.png"
-dest_files=["res://.godot/imported/couch_couch.png-70df9434b9dfb2b838cdb3835add86ad.ctex"]
+source_file="res://game/entities/furniture/vacuum_vacuum.png"
+dest_files=["res://.godot/imported/vacuum_vacuum.png-be037418f220998c078c4d8f12821e77.ctex"]
 
 [params]
 

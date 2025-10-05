@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d20svn4h8rob8"
-path="res://.godot/imported/couch_couch.png-70df9434b9dfb2b838cdb3835add86ad.ctex"
+uid="uid://8kfkk5oniakx"
+path="res://.godot/imported/bed_bed.png-4cb26647b80c2471f923997c66d97443.ctex"
 metadata={
 "vram_texture": false
 }
@@ -13,8 +13,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://game/world/level1/couch_couch.png"
-dest_files=["res://.godot/imported/couch_couch.png-70df9434b9dfb2b838cdb3835add86ad.ctex"]
+source_file="res://game/entities/furniture/bed_bed.png"
+dest_files=["res://.godot/imported/bed_bed.png-4cb26647b80c2471f923997c66d97443.ctex"]
 
 [params]
 
@@ -34,7 +34,7 @@ process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
 process/channel_remap/alpha=3
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
