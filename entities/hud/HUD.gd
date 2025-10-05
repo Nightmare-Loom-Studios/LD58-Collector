@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
                     Engine.time_scale = 0;
                     for node in UnoWorld.ROOT.get_children():
                         node.queue_free()
-                    UnoWorld.ROOT.add_child(load('res://game/scenes/level_house.tscn').instantiate())
+                    UnoWorld.ROOT.add_child(load('res://game/scenes/level_safe.tscn').instantiate())
                     Engine.time_scale = 1;
                     UnoWorld.CAMERA.fadeIn()
             )
@@ -32,23 +32,23 @@ func _process(delta: float) -> void:
 func _addMoney(val) -> void:
     UnoTween.new()\
         .setTrans(Tween.TRANS_CUBIC)\
-        .method(func(val): $Money.text = str(round(val*100)/100).pad_decimals(2) + '$', UnoWorld.GAME.money, UnoWorld.GAME.money+val, 1)
+        .method(func(val): $Money.text = '$'+str(round(val*100)/100).pad_decimals(2), UnoWorld.GAME.money, UnoWorld.GAME.money+val, 1)
 
     UnoWorld.GAME.money += val
 
 func _addVacuum(val) -> void:
     UnoTween.new()\
         .setTrans(Tween.TRANS_CUBIC)\
-        .method(func(val): $Vacuum.text = str(val), UnoWorld.GAME.itemsSucked, UnoWorld.GAME.itemsSucked+val, 1)\
-        .callback(func(): $Vacuum.text = str(UnoWorld.GAME.itemsSucked))
+        .method(func(val): $Vacuum.text = str(val)+'/'+str(int(Vacuum.MAX_ITEMS*Game.bonusCapacity)), UnoWorld.GAME.itemsSucked, UnoWorld.GAME.itemsSucked+val, 1)\
+        .callback(func(): $Vacuum.text = str(UnoWorld.GAME.itemsSucked)+'/'+str(int(Vacuum.MAX_ITEMS*Game.bonusCapacity)))
 
     UnoWorld.GAME.itemsSucked += val
 
 func _resetVacuum() -> void:
     UnoTween.new()\
         .setTrans(Tween.TRANS_CUBIC)\
-        .method(func(val): $Vacuum.text = str(val), UnoWorld.GAME.itemsSucked, 0, .25)\
-        .callback(func(): $Vacuum.text = str(UnoWorld.GAME.itemsSucked))
+        .method(func(val): $Vacuum.text = str(val)+'/'+str(int(Vacuum.MAX_ITEMS*Game.bonusCapacity)), UnoWorld.GAME.itemsSucked, 0, .25)\
+        .callback(func(): $Vacuum.text = str(UnoWorld.GAME.itemsSucked)+'/'+str(int(Vacuum.MAX_ITEMS*Game.bonusCapacity)))
 
     UnoWorld.GAME.amountSucked = 0
     UnoWorld.GAME.itemsSucked = 0

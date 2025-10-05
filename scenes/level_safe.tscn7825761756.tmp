@@ -205,6 +205,7 @@ points = PackedVector3Array(-7.8807116, -7.8807116, -4, 7.63444, 7.63444, 4, 7.6
 script = ExtResource("1_hyu8y")
 
 [node name="UnoPlayer" parent="." instance=ExtResource("1_iuv3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -39)
 collision_layer = 2
 
 [node name="Ground2" type="StaticBody3D" parent="."]
@@ -222,14 +223,14 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34,
 
 [node name="UpgradeSpeed" parent="Main" instance=ExtResource("10_32sey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 16)
-text = "Increase your movement speed."
+text = "Increase your movement speed.dz"
 fulltext = "A comfier couch. Take care of your posterior, it will return it to you."
 
 [node name="UpgradeCapacity" parent="Main" instance=ExtResource("10_32sey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 28)
 price = 300
 text = "Allow to vacuum more items per bag."
-fulltext = "After looking on the internet, you found a larger bag that fits your vacuum."
+fulltext = "Finally, after looking on the internet, you found a larger bag that fits."
 
 [node name="UpgradeAnimal" parent="Main" instance=ExtResource("10_32sey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 1, -7)
@@ -430,22 +431,6 @@ mesh = SubResource("BoxMesh_0on0f")
 [node name="StaticBody3D" type="StaticBody3D" parent="Main/Walls/MeshInstance3D4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Main/Walls/MeshInstance3D4/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_5wejd")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Main/Walls/MeshInstance3D4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_5wejd")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Main/Walls/MeshInstance3D4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_5wejd")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Main/Walls/MeshInstance3D4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_5wejd")
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Main/Walls/MeshInstance3D4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_5wejd")
 
 [node name="Shelf" parent="Main/Walls" instance=ExtResource("12_ha2hw")]

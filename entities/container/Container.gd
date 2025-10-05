@@ -6,6 +6,8 @@ signal hitted
 @export var valuables: Array[PackedScene] = []
 @export var number: int = 1
 
+var sound = [preload('res://game/audio/Tiroir1.wav'), preload('res://game/audio/Tiroir2.wav')]
+
 func _ready() -> void:
     add_to_group('hittable')
     hitted.connect(_onHitted)
@@ -22,6 +24,8 @@ func _onHitted() -> void:
 
 func spawnMoney():
     for i in range(0, number):
+        UnoAudio.playSound(sound.pick_random(), self)
+        UnoAudio.playSound(preload('res://game/audio/HitBroken.wav'), self)
         var newNode = valuables.pick_random().instantiate()
         UnoWorld.ROOT.add_child(newNode)
         newNode.position = global_position + Vector3(randf_range(-10,10), 2, 5)

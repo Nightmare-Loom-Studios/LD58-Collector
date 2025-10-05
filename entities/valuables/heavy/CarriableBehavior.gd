@@ -29,7 +29,12 @@ func _onCarried() -> void:
 
 func _onUncarried() -> void:
     isCarried = false
-    parent.collision_layer = originalCollisionlayer
+    UnoWorld.ROOT.delay(
+        func():
+            parent.collision_layer = originalCollisionlayer
+            , .1
+    )
+   
     UnoWorld.CAMERA.shake(UnoCamera.SHAKE_AMPL_MEDIUM, UnoCamera.SHAKE_SPEED_QUICK, 2)
     parent.linear_velocity.y = 10
     parent.linear_velocity.x = UnoWorld.PLAYER.lookTowards.x * 8

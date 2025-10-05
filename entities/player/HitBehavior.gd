@@ -5,6 +5,9 @@ extends Node
 var activeHit: Area3D
 var hitTween: UnoTween = null
 
+var soundHit = [preload('res://game/audio/Frappe1.wav'), preload('res://game/audio/Frappe2.wav'), preload('res://game/audio/Frappe3.wav')]
+var soundHitOk = [preload('res://game/audio/HitOk1.wav'), preload('res://game/audio/HitOk2.wav'), preload('res://game/audio/HitOk3.wav')]
+
 func _ready() -> void:
     activeHit = hitCollidersNode.get_node('Fist')
 
@@ -25,6 +28,13 @@ func _input(event) -> void:
             .property(activeHit.get_node('Sprite3D'), 'modulate:a', 0, .5)\
             .callback(func(): hitTween = null)
 
+        var hasHit = false
         for body in activeHit.get_overlapping_bodies():
             if body.is_in_group('hittable'):
                 body.emit_signal('hitted')
+                hasHit = true
+
+        if hasHit:
+            UnoAudio.playSound(soundHit.pick_random(), parent, 80)
+        else:
+            UnoAudio.playSound(soundHitOk.pick_random(), parent, 1000)
