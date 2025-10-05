@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://behta535h0uf7"]
+[gd_scene load_steps=114 format=3 uid="uid://behta535h0uf7"]
 
 [ext_resource type="PackedScene" uid="uid://cvt7g1tc761wa" path="res://game/entities/player/player.scn" id="1_cd8jw"]
 [ext_resource type="PackedScene" uid="uid://tix8rqykoqpg" path="res://game/entities/earn_area/earn_area.tscn" id="1_if8f6"]
@@ -22,7 +22,13 @@
 [ext_resource type="PackedScene" uid="uid://c3nxgydls3j4k" path="res://game/world/level1/couch.scn" id="15_3xjfy"]
 [ext_resource type="PackedScene" uid="uid://dnlbvnbai3to5" path="res://game/entities/valuables/light/BillStack.scn" id="15_7ur1p"]
 [ext_resource type="Texture2D" uid="uid://b202npx7m5h2q" path="res://game/world/level1/wall.webp" id="16_0v4u5"]
+[ext_resource type="PackedScene" uid="uid://dd04n866kekwq" path="res://game/entities/furniture/shelf.scn" id="16_4ks0a"]
 [ext_resource type="PackedScene" uid="uid://cbe0ygajimfi3" path="res://game/entities/valuables/heavy/tv.scn" id="16_cd8jw"]
+[ext_resource type="PackedScene" uid="uid://bq6ew2fn0fo78" path="res://game/entities/furniture/apple.glb" id="17_sk11p"]
+[ext_resource type="PackedScene" uid="uid://bkgsrl3b4wfgx" path="res://game/world/level1/truck.glb" id="20_fwdsa"]
+[ext_resource type="PackedScene" uid="uid://c2bacgyroce14" path="res://game/entities/furniture/bed.scn" id="25_5xjgu"]
+[ext_resource type="PackedScene" uid="uid://1ku0jx0bh1lq" path="res://game/entities/valuables/heavy/audiosystem.scn" id="28_5xjgu"]
+[ext_resource type="PackedScene" uid="uid://bk3br55lbwph5" path="res://game/world/level1/LargeDesk.scn" id="28_fwdsa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nhjph"]
 size = Vector3(200, 4, 200)
@@ -47,6 +53,50 @@ texture_filter = 0
 material = SubResource("StandardMaterial3D_avpn4")
 size = Vector2(70, 77)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7xytm"]
+load_path = "res://.godot/imported/livingground.webp-185cc69423512f38501ff061d57e69e0.bptc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5xjgu"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fwdsa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1qtg"]
+albedo_texture = SubResource("CompressedTexture2D_7xytm")
+normal_scale = 10.0
+normal_texture = SubResource("CompressedTexture2D_fwdsa")
+heightmap_scale = 10.0
+heightmap_texture = SubResource("CompressedTexture2D_5xjgu")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_su4qr"]
+material = SubResource("StandardMaterial3D_s1qtg")
+size = Vector2(60, 77)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s1qtg"]
+load_path = "res://.godot/imported/livingground.webp-185cc69423512f38501ff061d57e69e0.bptc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_su4qr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aglru"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6k0i2"]
+albedo_texture = SubResource("CompressedTexture2D_s1qtg")
+normal_scale = 10.0
+normal_texture = SubResource("CompressedTexture2D_aglru")
+heightmap_scale = 10.0
+heightmap_texture = SubResource("CompressedTexture2D_su4qr")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_adst2"]
+material = SubResource("StandardMaterial3D_6k0i2")
+size = Vector2(20, 21)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tgyvi"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vx5xr"]
@@ -68,7 +118,7 @@ size = Vector2(20, 8)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_nhjph"]
 material = SubResource("StandardMaterial3D_skanp")
-size = Vector2(13.5, 10)
+size = Vector2(14.5, 10)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nhjph"]
 
@@ -87,7 +137,7 @@ texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fwdsa"]
 material = SubResource("StandardMaterial3D_5xjgu")
-size = Vector2(70, 16)
+size = Vector2(70, 20)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0q57i"]
 albedo_color = Color(0.32941177, 0.26666668, 0.22745098, 1)
@@ -95,6 +145,10 @@ albedo_color = Color(0.32941177, 0.26666668, 0.22745098, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_s1qtg"]
 material = SubResource("StandardMaterial3D_0q57i")
 size = Vector3(14, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fwdsa"]
+material = SubResource("StandardMaterial3D_0q57i")
+size = Vector3(20, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgyvi"]
 albedo_texture = ExtResource("12_sk11p")
@@ -188,7 +242,7 @@ disable_receive_shadows = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5xjgu"]
 material = SubResource("StandardMaterial3D_7xytm")
-size = Vector2(16, 8)
+size = Vector2(24, 12)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4y2cx"]
 shading_mode = 0
@@ -206,7 +260,25 @@ size = Vector2(77, 8.1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0v4u5"]
 material = SubResource("StandardMaterial3D_4y2cx")
-size = Vector2(4.1, 38.1)
+size = Vector2(14.1, 70.1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0q57i"]
+material = SubResource("StandardMaterial3D_4y2cx")
+size = Vector2(14.1, 90.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwdsa"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_aglru"]
+material = SubResource("StandardMaterial3D_fwdsa")
+size = Vector2(34.1, 90.1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s1qtg"]
+material = SubResource("StandardMaterial3D_4y2cx")
+size = Vector2(104.1, 20.1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4ks0a"]
 load_path = "res://.godot/imported/wall.webp-587857229f0a0beea5430e8898764a59.ctex"
@@ -272,6 +344,102 @@ size = Vector3(10, 16, 4)
 [sub_resource type="BoxMesh" id="BoxMesh_7xytm"]
 material = SubResource("StandardMaterial3D_4ks0a")
 size = Vector3(10, 16, 52)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0q57i"]
+load_path = "res://.godot/imported/wall.webp-587857229f0a0beea5430e8898764a59.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_su4qr"]
+albedo_color = Color(0.72800004, 0.9009, 0.91, 1)
+albedo_texture = SubResource("CompressedTexture2D_0q57i")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+grow_amount = -4.674
+distance_fade_mode = 1
+distance_fade_min_distance = 20.0
+distance_fade_max_distance = 80.0
+stencil_flags = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_aglru"]
+material = SubResource("StandardMaterial3D_su4qr")
+size = Vector3(10, 24, 70)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6k0i2"]
+load_path = "res://.godot/imported/wall.webp-587857229f0a0beea5430e8898764a59.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adst2"]
+albedo_color = Color(0.72800004, 0.9009, 0.91, 1)
+albedo_texture = SubResource("CompressedTexture2D_6k0i2")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+grow_amount = -4.674
+distance_fade_min_distance = 20.0
+distance_fade_max_distance = 80.0
+stencil_flags = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_8ircb"]
+material = SubResource("StandardMaterial3D_adst2")
+size = Vector3(10, 24, 70)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ircb"]
+load_path = "res://.godot/imported/wall.webp-587857229f0a0beea5430e8898764a59.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5anmu"]
+albedo_color = Color(0.72800004, 0.9009, 0.91, 1)
+albedo_texture = SubResource("CompressedTexture2D_8ircb")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+grow_amount = -4.674
+distance_fade_min_distance = 20.0
+distance_fade_max_distance = 80.0
+stencil_flags = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xcq5"]
+material = SubResource("StandardMaterial3D_5anmu")
+size = Vector3(59, 24, 10)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5anmu"]
+load_path = "res://.godot/imported/wall.webp-587857229f0a0beea5430e8898764a59.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xcq5"]
+albedo_color = Color(0.72800004, 0.9009, 0.91, 1)
+albedo_texture = SubResource("CompressedTexture2D_5anmu")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+grow_amount = -4.674
+distance_fade_min_distance = 20.0
+distance_fade_max_distance = 80.0
+stencil_flags = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_w7yld"]
+material = SubResource("StandardMaterial3D_0xcq5")
+size = Vector3(30, 24, 10)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_adst2"]
+load_path = "res://.godot/imported/wall.webp-587857229f0a0beea5430e8898764a59.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ircb"]
+albedo_color = Color(0.91, 0.8420534, 0.61880004, 1)
+albedo_texture = SubResource("CompressedTexture2D_adst2")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+grow_amount = -4.674
+distance_fade_min_distance = 20.0
+distance_fade_max_distance = 80.0
+stencil_flags = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_5anmu"]
+material = SubResource("StandardMaterial3D_8ircb")
+size = Vector3(10, 24, 80)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5xjgu"]
 material = SubResource("StandardMaterial3D_4ks0a")
@@ -348,6 +516,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
 mesh = SubResource("PlaneMesh_nw8cr")
 skeleton = NodePath("../../..")
 
+[node name="FloorLiving2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, 0, -80)
+mesh = SubResource("PlaneMesh_su4qr")
+skeleton = NodePath("../../..")
+
+[node name="FloorLiving3" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, -62)
+mesh = SubResource("PlaneMesh_adst2")
+skeleton = NodePath("../../..")
+
+[node name="Table" parent="StaticBody3D" instance=ExtResource("8_nhjph")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, 74, 9, -46)
+
+[node name="TV" parent="StaticBody3D" instance=ExtResource("5_rgae1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 74, 14, -45)
+
 [node name="EarnArea" parent="." instance=ExtResource("1_if8f6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0.1, 52)
 
@@ -405,15 +589,6 @@ transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.7
 [node name="Silverware4" parent="Valuables" instance=ExtResource("4_cd8jw")]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, -11, 5, 11)
 
-[node name="TV2" parent="Valuables" instance=ExtResource("5_rgae1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 9, 4)
-
-[node name="TV3" parent="Valuables" instance=ExtResource("5_rgae1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 9, 57)
-
-[node name="TV4" parent="Valuables" instance=ExtResource("5_rgae1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 9, 55)
-
 [node name="Living" type="Node3D" parent="."]
 
 [node name="FloorLiving" type="MeshInstance3D" parent="Living"]
@@ -447,7 +622,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -18,
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11, 4, 26)
 
 [node name="Sprite3D" type="Sprite3D" parent="Living"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -16, 0.1, -27)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -14, 0.1, -27)
 pixel_size = 0.5
 shaded = true
 texture_filter = 0
@@ -456,11 +631,17 @@ texture = ExtResource("11_0v4u5")
 [node name="Container" type="Node3D" parent="."]
 
 [node name="Drawer4" parent="Container" instance=ExtResource("10_7ur1p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 4, -41)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.4, 4, -42)
 valuables = Array[PackedScene]([ExtResource("3_3xjfy"), ExtResource("3_3xjfy"), ExtResource("2_xa4f6"), ExtResource("4_cd8jw"), ExtResource("14_613x3"), ExtResource("14_613x3"), ExtResource("15_7ur1p")])
 
 [node name="Drawer5" parent="Container" instance=ExtResource("10_7ur1p")]
 transform = Transform3D(-1.3113416e-07, 0, 1, 0, 1, 0, -3, 0, -4.371139e-08, -37, 4, 14)
+
+[node name="Shelf" parent="Container" instance=ExtResource("16_4ks0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 13, -70)
+
+[node name="apple" parent="Container" instance=ExtResource("17_sk11p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 5, -1)
 
 [node name="Fridge" parent="." instance=ExtResource("11_4ks0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 9, -15)
@@ -471,7 +652,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59, 9, -15)
 [node name="Corridor" type="Node3D" parent="."]
 
 [node name="FloorLiving" type="MeshInstance3D" parent="Corridor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -59.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -61.5)
 mesh = SubResource("PlaneMesh_fwdsa")
 skeleton = NodePath("../../..")
 
@@ -479,6 +660,14 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -51.5)
 mesh = SubResource("BoxMesh_s1qtg")
 skeleton = NodePath("../../..")
+
+[node name="FloorLiving3" type="MeshInstance3D" parent="Corridor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 33, 0, -61.5)
+mesh = SubResource("BoxMesh_fwdsa")
+skeleton = NodePath("../../..")
+
+[node name="truck" parent="Corridor" instance=ExtResource("20_fwdsa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61, 33, 61)
 
 [node name="Ext" type="Node3D" parent="."]
 
@@ -537,7 +726,23 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -41,
 mesh = SubResource("PlaneMesh_0rjjs")
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="Ext/Wall1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 58, 16.01, -21)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 68, 16.01, -26)
+mesh = SubResource("PlaneMesh_0v4u5")
+
+[node name="MeshInstance3D27" type="MeshInstance3D" parent="Ext/Wall1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 68, 24.05, -107)
+mesh = SubResource("PlaneMesh_0q57i")
+
+[node name="MeshInstance3D29" type="MeshInstance3D" parent="Ext/Wall1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 24.05, -88)
+mesh = SubResource("PlaneMesh_aglru")
+
+[node name="MeshInstance3D28" type="MeshInstance3D" parent="Ext/Wall1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 107, 24.05, -77)
+mesh = SubResource("PlaneMesh_s1qtg")
+
+[node name="MeshInstance3D26" type="MeshInstance3D" parent="Ext/Wall1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 68, 16.01, -109)
 mesh = SubResource("PlaneMesh_0v4u5")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="Ext/Wall1"]
@@ -555,6 +760,30 @@ mesh = SubResource("BoxMesh_sk11p")
 [node name="MeshInstance3D18" type="MeshInstance3D" parent="Ext/Wall1"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19, 8, -47)
 mesh = SubResource("BoxMesh_7xytm")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="Ext/Wall1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 72, 4, -37)
+mesh = SubResource("BoxMesh_aglru")
+
+[node name="MeshInstance3D23" type="MeshInstance3D" parent="Ext/Wall1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 72, 12, -106)
+mesh = SubResource("BoxMesh_8ircb")
+
+[node name="MeshInstance3D25" type="MeshInstance3D" parent="Ext/Wall1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 102, 12, -71.7)
+mesh = SubResource("BoxMesh_0xcq5")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Ext/Wall1/MeshInstance3D25"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -29.99998, 0.10000038, 1.0999908)
+mesh = SubResource("PlaneMesh_5xjgu")
+
+[node name="MeshInstance3D24" type="MeshInstance3D" parent="Ext/Wall1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32, 12, -96)
+mesh = SubResource("BoxMesh_w7yld")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="Ext/Wall1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 12, -76)
+mesh = SubResource("BoxMesh_5anmu")
 
 [node name="MeshInstance3D19" type="MeshInstance3D" parent="Ext/Wall1"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 29, 8, -47)
@@ -577,6 +806,9 @@ mesh = SubResource("BoxMesh_4ks0a")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 37, 8, -4)
 shape = SubResource("ConvexPolygonShape3D_oicuu")
 
+[node name="Bed" parent="Ext/Wall1" instance=ExtResource("25_5xjgu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 54, 12, -89)
+
 [node name="Kitchen" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 0, 0)
 
@@ -592,4 +824,10 @@ mesh = SubResource("PlaneMesh_erus7")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -12, 12, -11)
 
 [node name="TV" parent="." instance=ExtResource("16_cd8jw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 12, -39)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 12, -36)
+
+[node name="AudioSystem" parent="." instance=ExtResource("28_5xjgu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, 9, -98)
+
+[node name="LargeDesk" parent="." instance=ExtResource("28_fwdsa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 13, -36)

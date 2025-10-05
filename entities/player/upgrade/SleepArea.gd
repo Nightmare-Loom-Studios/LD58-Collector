@@ -12,6 +12,7 @@ func _input(event) -> void:
             func():
                 for node in UnoWorld.ROOT.get_children(): node.queue_free()
                 UnoWorld.CAMERA.HUD.visible = false
+                Game.day += 1
                 UnoWorld.CAMERA.get_node('Falsify').showIt()
                 UnoWorld.CAMERA.fadeIn()
         )
@@ -20,7 +21,7 @@ func _onBodyEntered(body: Node3D) -> void:
     if body.name == 'UnoPlayer':
         UnoWorld.CAMERA.HUD.get_node('UpgradeBg').visible = true
         UnoWorld.CAMERA.HUD.get_node('UpgradeTextFull').text = 'Ready for another day of great work ?'
-        UnoWorld.CAMERA.HUD.get_node('UpgradeText').text = 'Sleep to the next day. (Press J)'
+        UnoWorld.CAMERA.HUD.get_node('UpgradeText').text = 'Sleep to the next day. (Press E)'
         inside = true
 
 func _onBodyExited(body: Node3D) -> void:

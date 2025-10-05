@@ -4,6 +4,8 @@ func _ready():
     UnoWorld.ROOT.delay(
         func():
         UnoWorld.GAME.time = null
+        UnoWorld.GAME.itemsSucked = 0
+        UnoWorld.GAME.amountSucked = 0
         UnoWorld.CAMERA.HUD.get_node('Vacuum').text = ''
         UnoWorld.CAMERA.HUD.get_node('Timer').text = ''
         UnoWorld.CAMERA.HUD.get_node('Day').text = 'End of day '+str(Game.day)

@@ -11,7 +11,7 @@ func _input(event: InputEvent) -> void:
         $Sheet1/FakedAmount.text =  '$'+str(int(Game.dayAmount))
         $Sheet1/FakedAmount.visible = true
         UnoWorld.ROOT.delay(
-            func(): $Hint.text = "Press J to start the day"
+            func(): $Hint.text = "Let's see him ! (Press E)"
             , 1
         )
     if event.is_action_pressed('yes') and $Hint.text != '' and $Sheet1/FakedAmount.visible:
@@ -27,7 +27,7 @@ func _input(event: InputEvent) -> void:
         )
 
 func showIt() -> void:
-    $Hint.text = "Press J to falsify"
+    $Hint.text = "Press E to falsify"
     $Sheet1/Amount.text = '$'+str(int(Game.dayAmount/100))
     $Day.text = "Seizure of day "+str(Game.day)
     visible = true

@@ -8,5 +8,6 @@ func _ready():
         UnoWorld.CAMERA.HUD.get_node('UpgradeText').text = ''
         UnoWorld.CAMERA.HUD.get_node('Day').text = ''
         UnoWorld.CAMERA.HUD.get_node('UpgradeTextFull').text = ''
+        UnoWorld.CAMERA.HUD.emit_signal('reset_vacuum')
         , .1
     )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bsf0biktet0br"]
+[gd_scene load_steps=50 format=3 uid="uid://bsf0biktet0br"]
 
 [ext_resource type="Script" uid="uid://0v6lno7eord4" path="res://game/scenes/level_safe.gd" id="1_hyu8y"]
 [ext_resource type="PackedScene" uid="uid://cvt7g1tc761wa" path="res://game/entities/player/player.scn" id="1_iuv3g"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://cqbp5h0s52sq3" path="res://game/entities/valuables/light/silverware.glb" id="14_sh65w"]
 [ext_resource type="PackedScene" uid="uid://uygip6hi4j8p" path="res://game/entities/player/upgrade/sleep_area.scn" id="15_0on0f"]
 [ext_resource type="PackedScene" uid="uid://c3nxgydls3j4k" path="res://game/world/level1/couch.scn" id="16_3a4kj"]
-[ext_resource type="PackedScene" uid="uid://bgipov5bkpf84" path="res://game/entities/valuables/heavy/tv_flat.scn" id="17_iuv3g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ngn8n"]
 size = Vector3(200, 4, 200)
@@ -232,7 +231,7 @@ text = "Allow to vacuum more items per bag."
 fulltext = "After looking on the internet, you found a larger bag that fits your vacuum."
 
 [node name="UpgradeAnimal" parent="Main" instance=ExtResource("10_32sey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 1, -7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, -114, -7)
 price = 300
 text = "Allow to grab and sell animals. Yup."
 fulltext = "Learn grey area in the law about domestic animals."
@@ -250,13 +249,13 @@ text = "Increase the vacuum range."
 fulltext = "After checking, seems like uncloging the pipe would help..."
 
 [node name="UpgradeSlowedCarry" parent="Main" instance=ExtResource("10_32sey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1, -12)
 price = 300
 text = "Less slowed while carrying items."
 fulltext = "Deal: you push heavy things, and you get to push heavier things."
 
 [node name="Dumbbell" parent="Main" instance=ExtResource("11_gtggl")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 24, 1, -17.5)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 39, 1, -19.5)
 
 [node name="Vacuum" parent="Main" instance=ExtResource("12_bfoqc")]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 0, 9, 20.732052)
@@ -459,6 +458,3 @@ transform = Transform3D(-0.25000003, 0.43301272, 1.8927587e-08, 0, -2.1855694e-0
 
 [node name="SleepArea" parent="Main" instance=ExtResource("15_0on0f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -14)
-
-[node name="TV" parent="." instance=ExtResource("17_iuv3g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -17)

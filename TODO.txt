@@ -24,6 +24,3 @@ Limiter taille sac
 => Sac en fonction de taille
 Musiques et audio (en journée obligatoire)
 Particules (commencé)
-
-Opt. (extérieur)
-Opt. Chien qui attaque

@@ -36,9 +36,9 @@ func _onBodyEntered(body: Node3D) -> void:
         UnoWorld.CAMERA.HUD.get_node('UpgradeTextFull').text = fulltext
         UnoWorld.CAMERA.HUD.get_node('UpgradeText').text = str(price) + '$ - ' + text
         if Game.money >= price:
-            UnoWorld.CAMERA.HUD.get_node('UpgradeText').text = UnoWorld.CAMERA.HUD.get_node('UpgradeText').text + '   (Press J  to buy)'
+            UnoWorld.CAMERA.HUD.get_node('UpgradeText').text = UnoWorld.CAMERA.HUD.get_node('UpgradeText').text + '   (Press E  to buy)'
         else:
-            UnoWorld.CAMERA.HUD.get_node('UpgradeText').text = UnoWorld.CAMERA.HUD.get_node('UpgradeText').text + '   (Not enough)'
+            UnoWorld.CAMERA.HUD.get_node('UpgradeText').text = UnoWorld.CAMERA.HUD.get_node('UpgradeText').text + '   (Not enough money)'
         inside = true
 
 func _onBodyExited(body: Node3D) -> void:

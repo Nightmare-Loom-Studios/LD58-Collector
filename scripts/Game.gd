@@ -2,8 +2,8 @@ extends Node3D
 class_name Game
 
 static var day = 1
-static var time = 120 # in seconds
-static var money: float = 2000
+static var time = 90 # in seconds
+static var money: float = 0
 static var dayAmount: float = 150000
 static var itemsSucked: int = 0
 static var amountSucked: float = 0
