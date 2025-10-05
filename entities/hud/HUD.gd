@@ -20,7 +20,10 @@ func _process(delta: float) -> void:
                     Engine.time_scale = 0;
                     for node in UnoWorld.ROOT.get_children():
                         node.queue_free()
-                    UnoWorld.ROOT.add_child(load('res://game/scenes/level_safe.tscn').instantiate())
+                    if Game.money >= Game.targetMoney:
+                         get_tree().change_scene_to_packed(load('res://game/world/ending.scn'))
+                    else:
+                        UnoWorld.ROOT.add_child(load('res://game/scenes/level_safe.tscn').instantiate())
                     Engine.time_scale = 1;
                     UnoWorld.CAMERA.fadeIn()
             )
@@ -32,7 +35,7 @@ func _process(delta: float) -> void:
 func _addMoney(val) -> void:
     UnoTween.new()\
         .setTrans(Tween.TRANS_CUBIC)\
-        .method(func(val): $Money.text = '$'+str(round(val*100)/100).pad_decimals(2), UnoWorld.GAME.money, UnoWorld.GAME.money+val, 1)
+        .method(func(val): $Money.text = '$'+str(int(val))+' /$'+str(Game.targetMoney), UnoWorld.GAME.money, UnoWorld.GAME.money+val, 1)
 
     UnoWorld.GAME.money += val
 

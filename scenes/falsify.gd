@@ -28,8 +28,10 @@ func _input(event: InputEvent) -> void:
 
 func showIt() -> void:
     $Hint.text = "Press E to falsify"
-    $Sheet1/Amount.text = '$'+str(int(Game.dayAmount/100))
+    $Sheet1/Amount.text = '$'+str(int(Game.dayAmount/100)).substr(0, 3)+'\''+str(int(Game.dayAmount/100)).substr(3, 3)
     $Day.text = "Seizure of day "+str(Game.day)
+    $Sheet1/FakedAmount.visible = false
+    $Sheet1/Amount/Dash.visible = false
     visible = true
 
 func shake(iterations) -> void:

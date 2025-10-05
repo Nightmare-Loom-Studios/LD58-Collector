@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://dkyfs45je2kis"]
+
+[ext_resource type="Script" uid="uid://dr2jx2x0qc03r" path="res://game/entities/container/Container.gd" id="1_paqvb"]
+[ext_resource type="PackedScene" uid="uid://b38yn4axamrfl" path="res://game/entities/valuables/light/CoinGold.scn" id="2_eciud"]
+[ext_resource type="PackedScene" uid="uid://dnlbvnbai3to5" path="res://game/entities/valuables/light/BillStack.scn" id="2_paqvb"]
+[ext_resource type="PackedScene" uid="uid://yde0u67ot1jr" path="res://game/entities/valuables/light/Bill.scn" id="3_eciud"]
+[ext_resource type="Texture2D" uid="uid://1c14kiftajd5" path="res://game/entities/container/drawer_door.webp" id="6_3syxs"]
+[ext_resource type="PackedScene" uid="uid://dhdvcxhmx6l43" path="res://game/entities/container/wardrobe.glb" id="6_paqvb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h63jj"]
+atlas = ExtResource("6_3syxs")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpfyg"]
+atlas = ExtResource("6_3syxs")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgliv"]
+atlas = ExtResource("6_3syxs")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xgliv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h63jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpfyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgliv")
+}],
+"loop": true,
+"name": &"door",
+"speed": 5.0
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_paqvb"]
+points = PackedVector3Array(-11, -16, -0.5, 10.999998, -16, -0.5, -11, -16, 3.4996085, -11, 13.998434, -0.5, 10.999998, -16, 3.4996085, 10.999998, 13.998434, -0.5, -8.000196, 8.999216, 4, -11, 13.998434, 3.4996085, -10.984925, 14.258419, -0.5, 10.999998, 13.998434, 3.4996085, 7.998041, 8.999216, 4, 10.982771, 14.258419, -0.5, -8.000196, 12, 4, -10.984925, 14.258419, 3.4996085, -10.933242, 14.51527, -0.5, 10.982771, 14.258419, 3.4996085, 7.998041, 12, 4, 10.9310875, 14.51527, -0.5, -9.001566, 16, 3.4996085, -9.262138, 15.981207, 3.4996085, -9.518402, 15.931089, 3.4996085, -9.766053, 15.846516, 3.4996085, -10.000783, 15.730619, 3.4996085, -10.218285, 15.586531, 3.4996085, -10.414252, 15.411119, 3.4996085, -10.588684, 15.216915, 3.4996085, -10.732968, 14.99765, 3.4996085, -10.8492565, 14.762726, 3.4996085, -10.933242, 14.51527, 3.4996085, -10.8492565, 14.762726, -0.5, 10.9310875, 14.51527, 3.4996085, 10.847101, 14.762726, 3.4996085, 10.730814, 14.99765, 3.4996085, 10.586531, 15.216915, 3.4996085, 10.412098, 15.411119, 3.4996085, 10.216131, 15.586531, 3.4996085, 9.998629, 15.730619, 3.4996085, 9.763899, 15.846516, 3.4996085, 9.516249, 15.931089, 3.4996085, 9.259983, 15.981207, 3.4996085, 8.999413, 16, 3.4996085, 10.847101, 14.762726, -0.5, -9.001566, 16, -0.5, -9.262138, 15.981207, -0.5, -9.518402, 15.931089, -0.5, -9.766053, 15.846516, -0.5, -10.000783, 15.730619, -0.5, -10.218285, 15.586531, -0.5, -10.414252, 15.411119, -0.5, -10.588684, 15.216915, -0.5, -10.732968, 14.99765, -0.5, 10.730814, 14.99765, -0.5, 10.586531, 15.216915, -0.5, 10.412098, 15.411119, -0.5, 10.216131, 15.586531, -0.5, 9.998629, 15.730619, -0.5, 9.763899, 15.846516, -0.5, 9.516249, 15.931089, -0.5, 9.259983, 15.981207, -0.5, 8.999413, 16, -0.5)
+
+[node name="Wardrobe" type="StaticBody3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+script = ExtResource("1_paqvb")
+hitPoints = 2
+valuables = Array[PackedScene]([ExtResource("2_paqvb"), ExtResource("2_paqvb"), ExtResource("3_eciud"), ExtResource("3_eciud"), ExtResource("2_eciud"), ExtResource("2_eciud"), ExtResource("2_eciud")])
+number = 6
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1.75, 0, 0, 0, 2.25, 0, 0, 0, 1, 0, 1, 2)
+pixel_size = 0.5
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_xgliv")
+animation = &"door"
+frame = 2
+
+[node name="wardrobe" parent="." instance=ExtResource("6_paqvb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_paqvb")

@@ -25,7 +25,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
     if not isCarried: return
 
-    parent.position = UnoWorld.PLAYER.global_position + Vector3(0, 18, 0)
+    parent.global_position = UnoWorld.PLAYER.global_position + Vector3(0, 18, 0)
 
 func _onCarried() -> void:
     isCarried = true
@@ -42,8 +42,8 @@ func _onUncarried() -> void:
 
     UnoWorld.CAMERA.shake(UnoCamera.SHAKE_AMPL_MEDIUM, UnoCamera.SHAKE_SPEED_QUICK, 2)
     parent.linear_velocity.y = 10
-    parent.linear_velocity.x = UnoWorld.PLAYER.lookTowards.x * 8
-    parent.linear_velocity.z = UnoWorld.PLAYER.lookTowards.z * 8
+    parent.linear_velocity.x = UnoWorld.PLAYER.lookTowards.x * 4
+    parent.linear_velocity.z = UnoWorld.PLAYER.lookTowards.z * 4
 
 func _onSell() -> void:
     if not isCarried:

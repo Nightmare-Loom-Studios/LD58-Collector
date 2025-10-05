@@ -42,7 +42,7 @@ radius = 0.25
 height = 0.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rghi1"]
-size = Vector3(20, 3, 20)
+size = Vector3(23, 6, 22)
 
 [node name="EarnArea" type="Node3D"]
 

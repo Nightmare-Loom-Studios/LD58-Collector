@@ -13,6 +13,7 @@ func _input(event) -> void:
                 for node in UnoWorld.ROOT.get_children(): node.queue_free()
                 UnoWorld.CAMERA.HUD.visible = false
                 Game.day += 1
+                Game.dayAmount = randi_range(80, 300) * 1000
                 UnoWorld.CAMERA.get_node('Falsify').showIt()
                 UnoWorld.CAMERA.fadeIn()
         )
