@@ -1,0 +1,220 @@
+[gd_scene load_steps=32 format=3 uid="uid://bsf0biktet0br"]
+
+[ext_resource type="PackedScene" uid="uid://cvt7g1tc761wa" path="res://game/entities/player/player.scn" id="1_iuv3g"]
+[ext_resource type="Texture2D" uid="uid://ct86lxvicc5e5" path="res://game/world/safe/ground.webp" id="6_0on0f"]
+[ext_resource type="Texture2D" uid="uid://bhpio8ckf6pfe" path="res://game/world/level1/carpet.webp" id="8_nleue"]
+[ext_resource type="PackedScene" uid="uid://cytfycoobhfr" path="res://game/world/level1/table.tscn" id="9_dfgb2"]
+[ext_resource type="PackedScene" uid="uid://do7npq7bpnlrb" path="res://game/world/level1/chair.tscn" id="10_0ey54"]
+[ext_resource type="PackedScene" uid="uid://domrowt6yrjrq" path="res://game/entities/container/Fridge.scn" id="12_qxakt"]
+[ext_resource type="Texture2D" uid="uid://1mphnat1os08" path="res://game/world/level1/brick_wall.webp" id="14_hs5r6"]
+[ext_resource type="Texture2D" uid="uid://bsh0ladfu0jqu" path="res://game/world/level1/kitchen_ground.webp" id="15_yk38l"]
+[ext_resource type="PackedScene" uid="uid://c3nxgydls3j4k" path="res://game/world/level1/couch.scn" id="16_3a4kj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ngn8n"]
+size = Vector3(200, 4, 200)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hyu8y"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iuv3g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d05ec"]
+albedo_texture = ExtResource("6_0on0f")
+normal_scale = 10.0
+normal_texture = SubResource("CompressedTexture2D_iuv3g")
+heightmap_scale = 10.0
+heightmap_texture = SubResource("CompressedTexture2D_hyu8y")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5wejd"]
+material = SubResource("StandardMaterial3D_d05ec")
+size = Vector2(70, 60)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nw8cr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0xtou"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyrm1"]
+albedo_texture = ExtResource("8_nleue")
+normal_scale = 10.0
+normal_texture = SubResource("CompressedTexture2D_0xtou")
+heightmap_scale = 10.0
+heightmap_texture = SubResource("CompressedTexture2D_nw8cr")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r514v"]
+material = SubResource("StandardMaterial3D_dyrm1")
+size = Vector2(30, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0spt"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("14_hs5r6")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+grow_amount = -4.674
+proximity_fade_distance = 0.01
+distance_fade_mode = 1
+distance_fade_min_distance = 20.0
+distance_fade_max_distance = 80.0
+stencil_flags = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_tgyvi"]
+material = SubResource("StandardMaterial3D_j0spt")
+size = Vector3(94, 16, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0on0f"]
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+grow_amount = -4.674
+proximity_fade_distance = 0.01
+distance_fade_min_distance = 20.0
+distance_fade_max_distance = 80.0
+stencil_flags = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_hyu8y"]
+material = SubResource("StandardMaterial3D_0on0f")
+size = Vector3(94, 4, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4hl8"]
+albedo_color = Color(0.49, 0.8385, 1, 1)
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+grow_amount = -4.674
+proximity_fade_distance = 0.01
+distance_fade_min_distance = 20.0
+distance_fade_max_distance = 80.0
+stencil_flags = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_32sey"]
+material = SubResource("StandardMaterial3D_m4hl8")
+size = Vector3(512, 2, 512)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d05ec"]
+material = SubResource("StandardMaterial3D_0on0f")
+size = Vector3(94, 6, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0on0f"]
+material = SubResource("StandardMaterial3D_0on0f")
+size = Vector3(16, 16, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iuv3g"]
+material = SubResource("StandardMaterial3D_0on0f")
+size = Vector3(36, 16, 8)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oicuu"]
+points = PackedVector3Array(19, 8, 4, 19, 8, -4, -19, 8, 4, 19, -8, 4, 19, -8, -4, -19, 8, -4, -19, -8, 4, -19, -8, -4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vx5xr"]
+albedo_texture = ExtResource("15_yk38l")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_skanp"]
+material = SubResource("StandardMaterial3D_vx5xr")
+size = Vector2(50, 50)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_erus7"]
+material = SubResource("StandardMaterial3D_vx5xr")
+size = Vector2(10, 9)
+
+[node name="LevelSafe" type="Node3D"]
+
+[node name="UnoPlayer" parent="." instance=ExtResource("1_iuv3g")]
+collision_layer = 2
+
+[node name="Ground2" type="StaticBody3D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -1)
+shape = SubResource("BoxShape3D_ngn8n")
+
+[node name="Living" type="Node3D" parent="."]
+
+[node name="FloorLiving" type="MeshInstance3D" parent="Living"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+mesh = SubResource("PlaneMesh_5wejd")
+skeleton = NodePath("../../..")
+
+[node name="CarpetLiving" type="MeshInstance3D" parent="Living"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.099999964, -21)
+mesh = SubResource("PlaneMesh_r514v")
+skeleton = NodePath("../../..")
+
+[node name="Table" parent="Living" instance=ExtResource("9_dfgb2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 8, 14)
+
+[node name="Chair" parent="Living" instance=ExtResource("10_0ey54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, 1)
+
+[node name="Chair2" parent="Living" instance=ExtResource("10_0ey54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 4, 1)
+
+[node name="Chair3" parent="Living" instance=ExtResource("10_0ey54")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -18, 4, 26)
+
+[node name="Chair4" parent="Living" instance=ExtResource("10_0ey54")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11, 4, 26)
+
+[node name="Fridge" parent="." instance=ExtResource("12_qxakt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 9, -15)
+
+[node name="Fridge2" parent="." instance=ExtResource("12_qxakt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59, 9, -15)
+
+[node name="Walls" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 38)
+mesh = SubResource("BoxMesh_tgyvi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -30)
+mesh = SubResource("BoxMesh_hyu8y")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -157, -415)
+mesh = SubResource("BoxMesh_32sey")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 23, -30)
+mesh = SubResource("BoxMesh_d05ec")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 12, -30)
+mesh = SubResource("BoxMesh_0on0f")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 12, -30)
+mesh = SubResource("BoxMesh_iuv3g")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 37, 8, -4)
+shape = SubResource("ConvexPolygonShape3D_oicuu")
+
+[node name="Kitchen" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 0, 0)
+
+[node name="KitchenGround" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 9)
+mesh = SubResource("PlaneMesh_skanp")
+
+[node name="KitchenGround2" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 0, 19.5)
+mesh = SubResource("PlaneMesh_erus7")
+
+[node name="Couch" parent="." instance=ExtResource("16_3a4kj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -15, 9, -11)

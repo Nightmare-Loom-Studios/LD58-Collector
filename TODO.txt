@@ -12,27 +12,18 @@ OK --- Pouvoir vider aspirateur avec I
 OK --- Fait pop un sac
 
 
-Map simple avec items
-    Cuisine
-        Sol damier
-        Vin
-        Frigo
-        Couverts
-    Jardin
-        Abri de jardin
-        Tomate
-        Carottes
-    Chambre
-        Bague
-        Collier
-        Costard
+Appartement aléatoire
+> Pièces préfaites avec déco alétaoire
+> Spots de loot aléatoires
 
 Appartement avec améliorations
 Polish mouvement
 Intro et fin
 
+Limiter taille sac
+=> Sac en fonction de taille
 Musiques et audio (en journée obligatoire)
-Particules
+Particules (commencé)
 
 Opt. (extérieur)
 Opt. Chien qui attaque

@@ -6,12 +6,12 @@ var carriedNode: NodeSlot
 
 func _ready() -> void:
     carriedNode = NodeSlot.new(
-        func(node: Node3D): node.get_node('CarriableBehavior').emit_signal('carried'),
-        func(node: Node3D): node.get_node('CarriableBehavior').emit_signal('uncarried')
+        func(node: Node3D): node.get_node('CarriableBehavior').emit_signal('carried'); UnoWorld.PLAYER.get_node('Hands').play('carry'),
+        func(node: Node3D): node.get_node('CarriableBehavior').emit_signal('uncarried'); UnoWorld.PLAYER.get_node('Hands').play('idle')
     )
 
 func _input(event: InputEvent) -> void:
-    if event.is_action_pressed('grab'):
+    if event.is_action_pressed('grab') and ['idle', 'carry'].has(UnoWorld.PLAYER.get_node('Hands').animation):
         if carriedNode.node: carriedNode.put(null)
         elif closestNode: carriedNode.put(closestNode)
 

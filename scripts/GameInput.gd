@@ -10,3 +10,5 @@ func _ready() -> void:
     UnoInput.addInput('suck', KEY_U)
     UnoInput.addInput('empty_bag', KEY_I)
     UnoInput.addInput('grab', KEY_K)
+    
+    UnoInput.addInput('wow', KEY_V)

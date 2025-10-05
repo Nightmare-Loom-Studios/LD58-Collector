@@ -2,21 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bec3qqsoqwknx"
-path.s3tc="res://.godot/imported/HandHit.webp-64b90a74bbec27ed47f7f5d4180d448e.s3tc.ctex"
+uid="uid://8eqy4sblmbfd"
+path="res://.godot/imported/vin_vin.png-a33640621ba603ac40841e70b6aaad8b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
+}
+generator_parameters={
+"md5": "d65b9cd03cd272c8b45b109ed4b8cc4e"
 }
 
 [deps]
 
-source_file="res://game/entities/player/HandHit.webp"
-dest_files=["res://.godot/imported/HandHit.webp-64b90a74bbec27ed47f7f5d4180d448e.s3tc.ctex"]
+source_file="res://game/entities/valuables/light/vin_vin.png"
+dest_files=["res://.godot/imported/vin_vin.png-a33640621ba603ac40841e70b6aaad8b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -1,25 +1,10 @@
-[gd_scene load_steps=49 format=3 uid="uid://dq83vcp4cby6t"]
+[gd_scene load_steps=9 format=3 uid="uid://dq83vcp4cby6t"]
 
 [ext_resource type="Script" uid="uid://dsa7m2f2bd55b" path="res://game/scripts/Game.gd" id="1_ru4j2"]
 [ext_resource type="Script" uid="uid://c6n3k82vjhw15" path="res://addons/uno_plugin/nodes/UnoWorld.gd" id="1_wowgv"]
+[ext_resource type="PackedScene" uid="uid://bsf0biktet0br" path="res://game/scenes/level_safe.tscn" id="3_ykdcs"]
 [ext_resource type="Script" uid="uid://djr46fbmples0" path="res://addons/uno_plugin/nodes/UnoCamera.gd" id="4_l4dfk"]
-[ext_resource type="PackedScene" uid="uid://tix8rqykoqpg" path="res://game/entities/earn_area/earn_area.tscn" id="4_og0sj"]
-[ext_resource type="PackedScene" uid="uid://dh60nka52ecwf" path="res://game/entities/valuables/light/CoinSilver.scn" id="6_4osd1"]
-[ext_resource type="PackedScene" uid="uid://cvt7g1tc761wa" path="res://game/entities/player/player.scn" id="6_og0sj"]
 [ext_resource type="Script" uid="uid://b40xan6043iu" path="res://game/entities/hud/HUD.gd" id="9_4osd1"]
-[ext_resource type="Texture2D" uid="uid://don2nblak8ms5" path="res://game/world/level1/livingground.webp" id="10_2nnov"]
-[ext_resource type="PackedScene" uid="uid://b38yn4axamrfl" path="res://game/entities/valuables/light/CoinGold.scn" id="10_ru4j2"]
-[ext_resource type="PackedScene" uid="uid://bgipov5bkpf84" path="res://game/entities/valuables/heavy/tv_flat.scn" id="11_0xtou"]
-[ext_resource type="Texture2D" uid="uid://bhpio8ckf6pfe" path="res://game/world/level1/carpet.webp" id="11_avpn4"]
-[ext_resource type="PackedScene" uid="uid://2w8nrkw2rqnl" path="res://game/entities/valuables/light/Silverware.tscn" id="12_dyrm1"]
-[ext_resource type="PackedScene" uid="uid://dp4s2b1lyrsqn" path="res://game/entities/container/Drawer.tscn" id="12_ngn8n"]
-[ext_resource type="PackedScene" uid="uid://cytfycoobhfr" path="res://game/world/level1/table.tscn" id="12_nw8cr"]
-[ext_resource type="PackedScene" uid="uid://do7npq7bpnlrb" path="res://game/world/level1/chair.tscn" id="13_0xtou"]
-[ext_resource type="Texture2D" uid="uid://c5eqww4rjkvxc" path="res://game/world/level1/grass.webp" id="13_j0spt"]
-[ext_resource type="Texture2D" uid="uid://1mphnat1os08" path="res://game/world/level1/brick_wall.webp" id="13_r514v"]
-[ext_resource type="Texture2D" uid="uid://bsh0ladfu0jqu" path="res://game/world/level1/kitchen_ground.webp" id="15_tgyvi"]
-[ext_resource type="PackedScene" uid="uid://cbe0ygajimfi3" path="res://game/entities/valuables/heavy/tv.scn" id="16_dyrm1"]
-[ext_resource type="PackedScene" uid="uid://c3nxgydls3j4k" path="res://game/world/level1/couch.scn" id="17_dyrm1"]
 
 [sub_resource type="Environment" id="Environment_j4u14"]
 background_mode = 1
@@ -28,129 +13,9 @@ ambient_light_color = Color(0.96926266, 0.91667455, 0.8592979, 1)
 ambient_light_energy = 0.1
 reflected_light_source = 1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ngn8n"]
-size = Vector3(200, 4, 200)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2nnov"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avpn4"]
-albedo_texture = ExtResource("10_2nnov")
-normal_scale = 10.0
-normal_texture = SubResource("CompressedTexture2D_2nnov")
-heightmap_scale = 10.0
-heightmap_texture = SubResource("CompressedTexture2D_2nnov")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_triplanar = true
-uv1_world_triplanar = true
-texture_filter = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_nw8cr"]
-material = SubResource("StandardMaterial3D_avpn4")
-size = Vector2(70, 60)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j0spt"]
-load_path = "res://.godot/imported/livingground.webp-185cc69423512f38501ff061d57e69e0.bptc.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tgyvi"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vx5xr"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skanp"]
-albedo_texture = SubResource("CompressedTexture2D_j0spt")
-normal_scale = 10.0
-normal_texture = SubResource("CompressedTexture2D_vx5xr")
-heightmap_scale = 10.0
-heightmap_texture = SubResource("CompressedTexture2D_tgyvi")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_triplanar = true
-uv1_world_triplanar = true
-texture_filter = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_oicuu"]
-material = SubResource("StandardMaterial3D_skanp")
-size = Vector2(20, 8)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nw8cr"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0xtou"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyrm1"]
-albedo_texture = ExtResource("11_avpn4")
-normal_scale = 10.0
-normal_texture = SubResource("CompressedTexture2D_0xtou")
-heightmap_scale = 10.0
-heightmap_texture = SubResource("CompressedTexture2D_nw8cr")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_triplanar = true
-uv1_world_triplanar = true
-texture_filter = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_r514v"]
-material = SubResource("StandardMaterial3D_dyrm1")
-size = Vector2(30, 30)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgyvi"]
-albedo_texture = ExtResource("13_j0spt")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_triplanar = true
-uv1_world_triplanar = true
-texture_filter = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_vx5xr"]
-material = SubResource("StandardMaterial3D_tgyvi")
-size = Vector2(200, 100)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0spt"]
-albedo_texture = ExtResource("13_r514v")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_triplanar = true
-uv1_world_triplanar = true
-texture_filter = 0
-grow_amount = -4.674
-proximity_fade_distance = 0.01
-distance_fade_mode = 1
-distance_fade_min_distance = 20.0
-distance_fade_max_distance = 80.0
-stencil_flags = 2
-
-[sub_resource type="BoxMesh" id="BoxMesh_tgyvi"]
-material = SubResource("StandardMaterial3D_j0spt")
-size = Vector3(64, 16, 8)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tgyvi"]
-points = PackedVector3Array(32, 8, 4, 32, 8, -4, -32, 8, 4, 32, -8, 4, 32, -8, -4, -32, 8, -4, -32, -8, 4, -32, -8, -4)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vx5xr"]
-points = PackedVector3Array(32, 8, 4, 32, 8, -4, -32, 8, 4, 32, -8, 4, 32, -8, -4, -32, 8, -4, -32, -8, 4, -32, -8, -4)
-
-[sub_resource type="BoxMesh" id="BoxMesh_vx5xr"]
-material = SubResource("StandardMaterial3D_j0spt")
-size = Vector3(10, 16, 8)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_skanp"]
-points = PackedVector3Array(-5, -8, -4, -5, -8, 4, -5, 8, -4, 5, -8, -4, 5, -8, 4, -5, 8, 4, 5, 8, -4, 5, 8, 4)
-
-[sub_resource type="BoxMesh" id="BoxMesh_skanp"]
-material = SubResource("StandardMaterial3D_j0spt")
-size = Vector3(38, 16, 8)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oicuu"]
-points = PackedVector3Array(19, 8, 4, 19, 8, -4, -19, 8, 4, 19, -8, 4, 19, -8, -4, -19, 8, -4, -19, -8, 4, -19, -8, -4)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vx5xr"]
-albedo_texture = ExtResource("15_tgyvi")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_triplanar = true
-uv1_world_triplanar = true
-texture_filter = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_skanp"]
-material = SubResource("StandardMaterial3D_vx5xr")
-size = Vector2(50, 50)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_erus7"]
-material = SubResource("StandardMaterial3D_vx5xr")
-size = Vector2(10, 9)
+[sub_resource type="Environment" id="Environment_vx5xr"]
+background_energy_multiplier = 0.0
+tonemap_exposure = 2.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_og0sj"]
 font_size = 32
@@ -177,186 +42,12 @@ directional_shadow_max_distance = 500.0
 script = ExtResource("1_wowgv")
 metadata/_custom_type_script = "uid://c6n3k82vjhw15"
 
-[node name="Ground2" type="StaticBody3D" parent="UnoWorld"]
-collision_mask = 3
+[node name="LevelSafe" parent="UnoWorld" instance=ExtResource("3_ykdcs")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="UnoWorld/Ground2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -1)
-shape = SubResource("BoxShape3D_ngn8n")
-
-[node name="EarnArea" parent="UnoWorld" instance=ExtResource("4_og0sj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0.1, 57)
-
-[node name="Valuables" type="Node3D" parent="UnoWorld"]
-
-[node name="CoinSilver" parent="UnoWorld/Valuables" instance=ExtResource("6_4osd1")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 13, 7.7746973, 2.8271194)
-
-[node name="CoinSilver2" parent="UnoWorld/Valuables" instance=ExtResource("6_4osd1")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 29, 4.41005, -9.729917)
-
-[node name="CoinSilver3" parent="UnoWorld/Valuables" instance=ExtResource("6_4osd1")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 26, 9.327612, 8.622675)
-
-[node name="CoinSilver9" parent="UnoWorld/Valuables" instance=ExtResource("10_ru4j2")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 26, 5.3252077, 1.4129059)
-
-[node name="CoinSilver10" parent="UnoWorld/Valuables" instance=ExtResource("10_ru4j2")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 14, 9.207494, 15.901793)
-
-[node name="CoinSilver11" parent="UnoWorld/Valuables" instance=ExtResource("10_ru4j2")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 23, 3.2546554, -6.314501)
-
-[node name="CoinSilver12" parent="UnoWorld/Valuables" instance=ExtResource("10_ru4j2")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 39, 8.689856, 13.969941)
-
-[node name="CoinSilver13" parent="UnoWorld/Valuables" instance=ExtResource("10_ru4j2")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 38, 1.184103, -14.041907)
-
-[node name="CoinSilver4" parent="UnoWorld/Valuables" instance=ExtResource("6_4osd1")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 19, 11.915802, 18.281933)
-
-[node name="CoinSilver5" parent="UnoWorld/Valuables" instance=ExtResource("6_4osd1")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 24, 12.69226, 21.17971)
-
-[node name="CoinSilver6" parent="UnoWorld/Valuables" instance=ExtResource("6_4osd1")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 38, 8.551155, 5.724897)
-
-[node name="CoinSilver7" parent="UnoWorld/Valuables" instance=ExtResource("6_4osd1")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 31, 8.033517, 3.793045)
-
-[node name="CoinSilver8" parent="UnoWorld/Valuables" instance=ExtResource("6_4osd1")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 21, 3.633593, -12.627692)
-
-[node name="Silverware" parent="UnoWorld/Valuables" instance=ExtResource("12_dyrm1")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -10, 5, 17)
-value = 5.0
-
-[node name="Silverware2" parent="UnoWorld/Valuables" instance=ExtResource("12_dyrm1")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -17, 5, 17)
-
-[node name="Silverware3" parent="UnoWorld/Valuables" instance=ExtResource("12_dyrm1")]
-transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, -18, 5, 11)
-
-[node name="Silverware4" parent="UnoWorld/Valuables" instance=ExtResource("12_dyrm1")]
-transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, -11, 5, 11)
-
-[node name="TV2" parent="UnoWorld/Valuables" instance=ExtResource("11_0xtou")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 9, 4)
-
-[node name="TV3" parent="UnoWorld/Valuables" instance=ExtResource("11_0xtou")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 9, 57)
-
-[node name="TV4" parent="UnoWorld/Valuables" instance=ExtResource("11_0xtou")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 9, 55)
-
-[node name="Living" type="Node3D" parent="UnoWorld"]
-
-[node name="FloorLiving" type="MeshInstance3D" parent="UnoWorld/Living"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
-mesh = SubResource("PlaneMesh_nw8cr")
-skeleton = NodePath("../..")
-
-[node name="FloorLiving2" type="MeshInstance3D" parent="UnoWorld/Living"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 38)
-mesh = SubResource("PlaneMesh_oicuu")
-skeleton = NodePath("../..")
-
-[node name="CarpetLiving" type="MeshInstance3D" parent="UnoWorld/Living"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.099999964, -21)
-mesh = SubResource("PlaneMesh_r514v")
-skeleton = NodePath("../..")
-
-[node name="Table" parent="UnoWorld/Living" instance=ExtResource("12_nw8cr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 8, 14)
-
-[node name="Chair" parent="UnoWorld/Living" instance=ExtResource("13_0xtou")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, 1)
-
-[node name="Chair2" parent="UnoWorld/Living" instance=ExtResource("13_0xtou")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 4, 1)
-
-[node name="Chair3" parent="UnoWorld/Living" instance=ExtResource("13_0xtou")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -18, 4, 26)
-
-[node name="Chair4" parent="UnoWorld/Living" instance=ExtResource("13_0xtou")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11, 4, 26)
-
-[node name="Container" type="Node3D" parent="UnoWorld"]
-
-[node name="Drawer" parent="UnoWorld/Container" instance=ExtResource("12_ngn8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -29)
-
-[node name="Drawer4" parent="UnoWorld/Container" instance=ExtResource("12_ngn8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 4, -29)
-
-[node name="Drawer5" parent="UnoWorld/Container" instance=ExtResource("12_ngn8n")]
-transform = Transform3D(-1.3113416e-07, 0, 1, 0, 1, 0, -3, 0, -4.371139e-08, -37, 4, 14)
-
-[node name="Drawer2" parent="UnoWorld/Container" instance=ExtResource("12_ngn8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 4, -29)
-
-[node name="Drawer3" parent="UnoWorld/Container" instance=ExtResource("12_ngn8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 4, -29)
-
-[node name="Ext" type="Node3D" parent="UnoWorld"]
-
-[node name="Grass" type="MeshInstance3D" parent="UnoWorld/Ext"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 92)
-mesh = SubResource("PlaneMesh_vx5xr")
-
-[node name="Wall1" type="StaticBody3D" parent="UnoWorld/Ext"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="UnoWorld/Ext/Wall1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 8, 38)
-mesh = SubResource("BoxMesh_tgyvi")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="UnoWorld/Ext/Wall1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 8, 38)
-shape = SubResource("ConvexPolygonShape3D_tgyvi")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="UnoWorld/Ext/Wall1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 8, 38)
-mesh = SubResource("BoxMesh_tgyvi")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="UnoWorld/Ext/Wall1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 8, 38)
-shape = SubResource("ConvexPolygonShape3D_vx5xr")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="UnoWorld/Ext/Wall1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 37, 8, 29)
-mesh = SubResource("BoxMesh_vx5xr")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="UnoWorld/Ext/Wall1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 37, 8, 29)
-shape = SubResource("ConvexPolygonShape3D_skanp")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="UnoWorld/Ext/Wall1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 37, 8, -4)
-mesh = SubResource("BoxMesh_skanp")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="UnoWorld/Ext/Wall1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 37, 8, -4)
-shape = SubResource("ConvexPolygonShape3D_oicuu")
-
-[node name="Kitchen" type="Node3D" parent="UnoWorld"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 0, 0)
-
-[node name="KitchenGround" type="MeshInstance3D" parent="UnoWorld/Kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 9)
-mesh = SubResource("PlaneMesh_skanp")
-
-[node name="KitchenGround2" type="MeshInstance3D" parent="UnoWorld/Kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 0, 19.5)
-mesh = SubResource("PlaneMesh_erus7")
-
-[node name="UnoPlayer" parent="." instance=ExtResource("6_og0sj")]
-collision_layer = 2
-
-[node name="UnoCamera" type="Camera3D" parent="." node_paths=PackedStringArray("followingObject")]
+[node name="UnoCamera" type="Camera3D" parent="."]
+environment = SubResource("Environment_vx5xr")
 fov = 60.0
 script = ExtResource("4_l4dfk")
-followingObject = NodePath("../UnoPlayer")
 cameraDistance = 50.0
 vectorOffset = Vector3(0, 2, 2)
 metadata/_custom_type_script = "uid://djr46fbmples0"
@@ -373,6 +64,20 @@ offset_bottom = 42.0
 text = "0$"
 label_settings = SubResource("LabelSettings_og0sj")
 
+[node name="Timer" type="Label" parent="UnoCamera/HUD"]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = -0.014
+anchor_right = 1.0
+anchor_bottom = -0.014
+offset_top = 20.0
+offset_right = -10.0
+offset_bottom = 41.072
+grow_horizontal = 0
+text = "0:00"
+label_settings = SubResource("LabelSettings_og0sj")
+
 [node name="Vacuum" type="Label" parent="UnoCamera/HUD"]
 texture_filter = 1
 anchors_preset = 2
@@ -386,9 +91,3 @@ grow_vertical = 0
 text = "0"
 label_settings = SubResource("LabelSettings_og0sj")
 vertical_alignment = 2
-
-[node name="Couch" parent="." instance=ExtResource("17_dyrm1")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -15, 9, -11)
-
-[node name="TV" parent="." instance=ExtResource("16_dyrm1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 12, -27)

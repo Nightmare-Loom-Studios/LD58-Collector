@@ -5,13 +5,20 @@ var cashbagPrefab: PackedScene = preload('res://game/entities/valuables/heavy/ca
 func _input(event: InputEvent) -> void:
     if event.is_action_pressed('empty_bag') and UnoWorld.GAME.amountSucked > 0:
         var cashbagNode = cashbagPrefab.instantiate()
+        cashbagNode.get_node('GPUParticles3D').restart()
         UnoWorld.ROOT.add_child(cashbagNode)
         cashbagNode.get_node('CarriableBehavior').value = UnoWorld.GAME.amountSucked
         UnoWorld.PLAYER.get_node('CarryBehavior').carriedNode.put(cashbagNode)
         UnoCamera.HUD.emit_signal('reset_vacuum')
 
+    if event.is_action_released('suck') and ['vacuum'].has(UnoWorld.PLAYER.get_node('Hands').animation):
+        UnoWorld.PLAYER.get_node('Hands').play('idle')
+        UnoWorld.PLAYER.get_node('VaccumArea').get_node('GPUParticles3D').emitting = false
+
 func _process(delta: float) -> void:
-    if Input.is_action_pressed('suck'):
+    if Input.is_action_pressed('suck') and ['idle', 'vacuum'].has(UnoWorld.PLAYER.get_node('Hands').animation):
+        UnoWorld.PLAYER.get_node('Hands').play('vacuum')
+        UnoWorld.PLAYER.get_node('VaccumArea').get_node('GPUParticles3D').emitting = true
         UnoWorld.CAMERA.shake(UnoCamera.SHAKE_AMPL_MEDIUM, UnoCamera.SHAKE_SPEED_QUICK, 2)
         var suckedCount: int = 0
         for body in get_overlapping_bodies():

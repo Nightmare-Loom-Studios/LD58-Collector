@@ -9,6 +9,26 @@ func _ready() -> void:
     add_vacuum.connect(_addVacuum)
     reset_vacuum.connect(_resetVacuum)
 
+func _process(delta: float) -> void:
+    if Input.is_action_pressed('wow'):
+        UnoWorld.GAME.time = 1
+
+    if UnoWorld.GAME.time != null:
+        if UnoWorld.GAME.time < 0:
+            UnoWorld.CAMERA.fadeOut().callback(
+                func():
+                    Engine.time_scale = 0;
+                    for node in UnoWorld.ROOT.get_children():
+                        node.queue_free()
+                    UnoWorld.ROOT.add_child(load('res://game/scenes/level_house.tscn').instantiate())
+                    Engine.time_scale = 1;
+                    UnoWorld.CAMERA.fadeIn()
+            )
+            UnoWorld.GAME.time = null
+        else:
+            UnoWorld.GAME.time -= delta
+            $Timer.text = str(int(UnoWorld.GAME.time/60)) + ':' + str(int(fmod(UnoWorld.GAME.time, 60))).pad_zeros(2)
+
 func _addMoney(val) -> void:
     UnoTween.new()\
         .setTrans(Tween.TRANS_CUBIC)\

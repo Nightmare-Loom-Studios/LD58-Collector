@@ -1,17 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp4s2b1lyrsqn"]
+[gd_scene load_steps=12 format=3 uid="uid://dp4s2b1lyrsqn"]
 
 [ext_resource type="PackedScene" uid="uid://bldn812v7ayb7" path="res://game/entities/container/drawer.glb" id="1_80gyc"]
 [ext_resource type="Script" uid="uid://dr2jx2x0qc03r" path="res://game/entities/container/Container.gd" id="1_h63jj"]
+[ext_resource type="PackedScene" uid="uid://b38yn4axamrfl" path="res://game/entities/valuables/light/CoinGold.scn" id="2_s14n3"]
 [ext_resource type="Texture2D" uid="uid://1c14kiftajd5" path="res://game/entities/container/drawer_door.webp" id="2_tv80q"]
+[ext_resource type="PackedScene" uid="uid://dh60nka52ecwf" path="res://game/entities/valuables/light/CoinSilver.scn" id="3_rqesk"]
+[ext_resource type="PackedScene" uid="uid://2w8nrkw2rqnl" path="res://game/entities/valuables/light/Silverware.tscn" id="4_bvw8d"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_80gyc"]
 points = PackedVector3Array(6, 8, 8, 6.259984, 7.982772, 8, 6, 8, -1, -6, 8, 8, 6.259984, 7.982772, -1, 6.516836, 7.9310884, 8, -6, 8, -1, -6.2615504, 7.982772, 8, 6.516836, 7.9310884, -1, 6.764292, 7.8465157, 8, -6.2615504, 7.982772, -1, -6.5184026, 7.9310884, 8, 6.764292, 7.8465157, -1, 6.999217, 7.7306185, 8, -6.5184026, 7.9310884, -1, -6.7658577, 7.8465157, 8, 6.999217, 7.7306185, -1, 7.216915, 7.5865307, 8, -6.7658577, 7.8465157, -1, -7.000783, 7.7306185, 8, 7.216915, 7.5865307, -1, 7.4126863, 7.4126863, 8, -7.000783, 7.7306185, -1, -7.218481, 7.5865307, 8, 7.4126863, 7.4126863, -1, 7.5865307, 7.216915, 8, -7.218481, 7.5865307, -1, -7.4142523, 7.4126863, 8, 7.5865307, 7.216915, -1, 7.7306185, 6.999217, 8, -7.4142523, 7.4126863, -1, -7.588097, 7.216915, 8, 7.7306185, 6.999217, -1, 7.8465157, 6.764292, 8, -7.588097, 7.216915, -1, -7.732185, 6.999217, 8, 7.8465157, 6.764292, -1, 7.9310884, 6.516836, 8, -7.732185, 6.999217, -1, -7.8480816, 6.764292, 8, 7.9310884, 6.516836, -1, 7.982772, 6.259984, 8, -7.8480816, 6.764292, -1, -7.932655, 6.516836, 8, 7.982772, 6.259984, -1, 8, 6, 8, -7.932655, 6.516836, -1, -7.9843383, 6.259984, 8, 8, 6, -1, 8, -8, 8, -7.9843383, 6.259984, -1, -8, 6, 8, 8, -8, -1, -8, -8, 8, -8, 6, -1, -8, -8, -1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h63jj"]
+atlas = ExtResource("2_tv80q")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cpfyg"]
 atlas = ExtResource("2_tv80q")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h63jj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgliv"]
 atlas = ExtResource("2_tv80q")
 region = Rect2(0, 0, 16, 16)
 
@@ -19,23 +26,24 @@ region = Rect2(0, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cpfyg")
-}],
-"loop": true,
-"name": &"0",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_h63jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpfyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgliv")
 }],
 "loop": true,
-"name": &"1",
+"name": &"door",
 "speed": 5.0
 }]
 
 [node name="Drawer" type="StaticBody3D"]
 script = ExtResource("1_h63jj")
+hitPoints = 2
+valuables = Array[PackedScene]([ExtResource("2_s14n3"), ExtResource("3_rqesk"), ExtResource("4_bvw8d")])
+number = 4
 
 [node name="drawer" parent="." instance=ExtResource("1_80gyc")]
 
@@ -49,4 +57,5 @@ pixel_size = 0.5
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_xgliv")
-animation = &"1"
+animation = &"door"
+frame = 2
