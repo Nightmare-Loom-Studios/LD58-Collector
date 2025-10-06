@@ -48,7 +48,7 @@ func _onUncarried() -> void:
 func _onSell() -> void:
     if not isCarried:
         var sellNode = sellParticule.instantiate()
-        UnoWorld.ROOT.add_child(sellNode)
+        UnoWorld.ROOT.get_children()[0].add_child(sellNode)
         sellNode.amount = clamp(25 * value/100, 5, 50)
         sellNode.emitting = true
         sellNode.global_position = parent.global_position

@@ -10,9 +10,6 @@ func _ready() -> void:
     reset_vacuum.connect(_resetVacuum)
 
 func _process(delta: float) -> void:
-    if Input.is_action_pressed('wow'):
-        UnoWorld.GAME.time = 1
-
     if UnoWorld.GAME.time != null:
         if UnoWorld.GAME.time < 0:
             UnoWorld.CAMERA.fadeOut().callback(
@@ -20,10 +17,13 @@ func _process(delta: float) -> void:
                     Engine.time_scale = 0;
                     for node in UnoWorld.ROOT.get_children():
                         node.queue_free()
+                    Engine.time_scale = 1;
+                    print(Game.money)
+                    print(Game.targetMoney)
                     if Game.money >= Game.targetMoney:
-                         get_tree().change_scene_to_packed(load('res://game/world/ending.scn'))
+                         get_tree().change_scene_to_packed(load('res://game/world/Ending.scn'))
                     else:
-                        UnoWorld.ROOT.add_child(load('res://game/scenes/level_safe.tscn').instantiate())
+                        UnoWorld.ROOT.add_child(preload('res://game/scenes/level_safe.tscn').instantiate())
                     Engine.time_scale = 1;
                     UnoWorld.CAMERA.fadeIn()
             )
@@ -40,24 +40,24 @@ func _addMoney(val) -> void:
     UnoWorld.GAME.money += val
 
 func _addVacuum(val) -> void:
-    var frac = (UnoWorld.GAME.itemsSucked+val)/(Vacuum.MAX_ITEMS*Game.bonusCapacity)
+    var frac = (Game.itemsSucked+val)/(Vacuum.MAX_ITEMS*Game.bonusCapacity)
     UnoTween.new()\
         .setTrans(Tween.TRANS_CUBIC)\
-        .method(func(val): $Vacuum.text = str(val)+'/'+str(int(Vacuum.MAX_ITEMS*Game.bonusCapacity)), UnoWorld.GAME.itemsSucked, UnoWorld.GAME.itemsSucked+val, .5)\
+        .method(func(val): $Vacuum.text = str(val)+'/'+str(int(Vacuum.MAX_ITEMS*Game.bonusCapacity)), Game.itemsSucked, Game.itemsSucked+val, .5)\
         .parallel().property($Vacuum, 'label_settings:font_color', Color.RED if frac == 1 else Color(1, 1-frac*.75, 1-frac*.5), .5)\
-        .callback(func(): $Vacuum.text = str(UnoWorld.GAME.itemsSucked)+'/'+str(int(Vacuum.MAX_ITEMS*Game.bonusCapacity)))
+        .callback(func(): $Vacuum.text = str(Game.itemsSucked)+'/'+str(int(Vacuum.MAX_ITEMS*Game.bonusCapacity)))
 
-    UnoWorld.GAME.itemsSucked += val
+    Game.itemsSucked += val
     if frac >= 1:
         $Vacuum/Hint.visible = true
 
 func _resetVacuum() -> void:
     UnoTween.new()\
         .setTrans(Tween.TRANS_CUBIC)\
-        .method(func(val): $Vacuum.text = str(val)+'/'+str(int(Vacuum.MAX_ITEMS*Game.bonusCapacity)), UnoWorld.GAME.itemsSucked, 0, .25)\
+        .method(func(val): $Vacuum.text = str(val)+'/'+str(int(Vacuum.MAX_ITEMS*Game.bonusCapacity)), Game.itemsSucked, 0, .25)\
         .parallel().property($Vacuum, 'label_settings:font_color', Color.WHITE, .1)\
-        .callback(func(): $Vacuum.text = str(UnoWorld.GAME.itemsSucked)+'/'+str(int(Vacuum.MAX_ITEMS*Game.bonusCapacity)))
+        .callback(func(): $Vacuum.text = str(Game.itemsSucked)+'/'+str(int(Vacuum.MAX_ITEMS*Game.bonusCapacity)))
 
-    UnoWorld.GAME.amountSucked = 0
-    UnoWorld.GAME.itemsSucked = 0
+    Game.amountSucked = 0
+    Game.itemsSucked = 0
     $Vacuum/Hint.visible = false

@@ -42,13 +42,12 @@ func _process(delta: float) -> void:
                 Engine.time_scale = 0;
                 for node in UnoWorld.ROOT.get_children():
                     node.queue_free()
-                UnoWorld.GAME.itemsSucked = 0
-                UnoWorld.GAME.amountSucked = 0
+                Game.itemsSucked = 0
+                Game.amountSucked = 0
                 UnoWorld.CAMERA.HUD.get_node('Vacuum').position.y = 266
                 UnoWorld.CAMERA.HUD.get_node('Control').visible = true
                 UnoWorld.GAME.money = 0
                 UnoWorld.CAMERA.HUD.emit_signal('add_money', 0)
-                UnoWorld.ROOT.add_child(preload('res://game/scenes/level_safe.tscn').instantiate())
                 Engine.time_scale = 1;
-                UnoWorld.CAMERA.fadeIn()
+                get_tree().change_scene_to_file('res://game/world/Beginning.scn')
         )

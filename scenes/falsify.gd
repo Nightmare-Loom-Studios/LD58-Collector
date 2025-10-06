@@ -8,7 +8,7 @@ func _input(event: InputEvent) -> void:
         $Hint.text = ""
         $Sheet1/Amount/Dash.visible = true
         shake(6)
-        $Sheet1/FakedAmount.text =  '$'+str(int(Game.dayAmount))
+        $Sheet1/FakedAmount.text =  '$'+str(int(Game.dayAmount)).substr(0, 2)+'\''+str(int(Game.dayAmount)).substr(2)
         $Sheet1/FakedAmount.visible = true
         UnoWorld.ROOT.delay(
             func(): $Hint.text = "Let's see him ! (Press E)"
@@ -17,9 +17,9 @@ func _input(event: InputEvent) -> void:
     if event.is_action_pressed('yes') and $Hint.text != '' and $Sheet1/FakedAmount.visible:
         UnoWorld.CAMERA.fadeOut().callback(
             func():
-                Engine.time_scale = 0;
+                for node in UnoWorld.ROOT.get_children():
+                    node.queue_free()
                 UnoWorld.ROOT.add_child(load('res://game/scenes/level_house.tscn').instantiate())
-                Engine.time_scale = 1;
                 UnoWorld.GAME.time = null
                 visible = false
                 UnoWorld.CAMERA.HUD.visible = true
@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 
 func showIt() -> void:
     $Hint.text = "Press E to falsify"
-    $Sheet1/Amount.text = '$'+str(int(Game.dayAmount/100)).substr(0, 3)+'\''+str(int(Game.dayAmount/100)).substr(3, 3)
+    $Sheet1/Amount.text = '$'+str(int(Game.dayAmount/100))
     $Day.text = "Seizure of day "+str(Game.day)
     $Sheet1/FakedAmount.visible = false
     $Sheet1/Amount/Dash.visible = false

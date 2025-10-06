@@ -221,36 +221,37 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34,
 
 [node name="UpgradeSpeed" parent="Main" instance=ExtResource("10_32sey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 16)
+price = 60
 text = "Increase your movement speed."
 fulltext = "A comfier couch. Take care of your posterior, it will return it to you."
 
 [node name="UpgradeCapacity" parent="Main" instance=ExtResource("10_32sey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 28)
-price = 300
+price = 100
 text = "Allow to vacuum more items per bag."
 fulltext = "After looking on the internet, you found a larger bag that fits your vacuum."
 
-[node name="UpgradeAnimal" parent="Main" instance=ExtResource("10_32sey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, -114, -7)
-price = 300
-text = "Allow to grab and sell animals. Yup."
-fulltext = "Learn grey area in the law about domestic animals."
+[node name="UpgradeHit" parent="Main" instance=ExtResource("10_32sey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3, 0.1, -8)
+price = 100
+text = "Do more damage when hitting furniture"
+fulltext = "Read a lot of books about how to break things quickly."
 
 [node name="UpgradeTime" parent="Main" instance=ExtResource("10_32sey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 1, 18)
-price = 300
+price = 140
 text = "More time before coming home."
 fulltext = "Being exhausted after a few minutes is worring, you should eat you know ?"
 
 [node name="UpgradeRange" parent="Main" instance=ExtResource("10_32sey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 12)
-price = 300
+price = 180
 text = "Increase the vacuum range."
 fulltext = "After checking, seems like uncloging the pipe would help..."
 
 [node name="UpgradeSlowedCarry" parent="Main" instance=ExtResource("10_32sey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1, -12)
-price = 300
+price = 220
 text = "Less slowed while carrying items."
 fulltext = "Deal: you push heavy things, and you get to push heavier things."
 

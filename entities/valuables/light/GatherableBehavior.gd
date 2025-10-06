@@ -17,6 +17,6 @@ func _onGathered() -> void:
         .callback(func(): self.queue_free())
 
 
-    UnoWorld.GAME.amountSucked += value
+    Game.amountSucked += value
 
     remove_from_group('gatherable')

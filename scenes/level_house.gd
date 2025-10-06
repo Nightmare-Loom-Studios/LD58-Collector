@@ -44,7 +44,7 @@ func _ready():
     randomize()
     UnoWorld.ROOT.delay(
         func():
-        UnoWorld.GAME.time = 90*Game.bonusTime
+        UnoWorld.GAME.time = 60*Game.bonusTime
         UnoWorld.CAMERA.HUD.get_node('UpgradeBg').visible = false
         UnoWorld.CAMERA.HUD.get_node('UpgradeText').text = ''
         UnoWorld.CAMERA.HUD.get_node('Day').text = ''
@@ -98,6 +98,6 @@ func _ready():
     if randi_range(0, 100) > 50: wardrobeBedroom.queue_free()
     else: tableBedroom.queue_free()
 
-    if randi_range(0, 100) > 33: owner1.queue_free()
-    elif randi_range(0, 100) > 33: owner2.queue_free()
-    else: owner3.queue_free()
+    if randi_range(0, 100) > 33: owner1.queue_free(); owner2.queue_free()
+    elif randi_range(0, 100) > 33: owner2.queue_free(); owner3.queue_free()
+    else: owner3.queue_free(); owner1.queue_free()

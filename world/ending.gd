@@ -49,7 +49,7 @@ func _input(event: InputEvent) -> void:
                         UnoTween.new()\
                         .setTrans(Tween.TRANS_CUBIC)\
                         .property($UnoCamera, 'rotation_degrees:y', -45, 1)\
-                        .callback(func(): $UnoCamera.fadeOut().callback(func(): get_tree().change_scene_to_packed(load('res://game/world/TrueEnding.scn')))))
+                        .callback(func(): $UnoCamera.fadeOut().callback(func(): get_tree().change_scene_to_packed(preload('res://game/world/TrueEnding.scn')))))
 
 func _process(delta: float) -> void:
     charTimer -= delta * quicker

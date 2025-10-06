@@ -16,10 +16,11 @@ func _ready() -> void:
         'UpgradeTime': if Game.bonusTime > 1: queue_free()
         'UpgradeAnimal': if Game.canGrabCat: queue_free()
         'UpgradeRange': if Game.bonusRange > 1: queue_free()
+        'UpgradeHit': if Game.bonusHit > 0: queue_free()
         'UpgradeCapacity': if Game.bonusCapacity > 1: queue_free()
 
 func _input(event) -> void:
-    if inside and (event.is_action_pressed('yes')):
+    if inside and (event.is_action_pressed('yes')) and Game.money >= price:
         UnoWorld.CAMERA.HUD.emit_signal('add_money', -price)
         match name:
             'UpgradeSlowedCarry': Game.bonusSpeedCarry = 1.2
@@ -27,6 +28,7 @@ func _input(event) -> void:
             'UpgradeTime': Game.bonusTime = 1.5
             'UpgradeAnimal': Game.canGrabCat = true
             'UpgradeRange': Game.bonusRange = 1.5
+            'UpgradeHit': Game.bonusHit = 1
             'UpgradeCapacity': Game.bonusCapacity = 2
         queue_free()
 

@@ -14,10 +14,10 @@ func _ready() -> void:
     $GPUParticles3D.process_material.emission_sphere_radius = Game.bonusRange
 
 func _input(event: InputEvent) -> void:
-    if event.is_action_pressed('empty_bag') and UnoWorld.GAME.amountSucked > 0:
+    if event.is_action_pressed('empty_bag') and Game.amountSucked > 0:
         var cashbagNode = cashbagPrefab.instantiate()
-        UnoWorld.ROOT.add_child(cashbagNode)
-        cashbagNode.get_node('CarriableBehavior').value = UnoWorld.GAME.amountSucked
+        UnoWorld.ROOT.get_children()[0].add_child(cashbagNode)
+        cashbagNode.get_node('CarriableBehavior').value = Game.amountSucked
         if Game.itemsSucked > Vacuum.MAX_ITEMS*Game.bonusCapacity * 0.8:
             cashbagNode.get_node('cashbag_full').visible = true
         elif Game.itemsSucked > Vacuum.MAX_ITEMS*Game.bonusCapacity * 0.5:
@@ -62,4 +62,4 @@ func _process(delta: float) -> void:
                     onSoundPlayer = null
 
 func canSuckAgain(extra) -> bool:
-    return UnoWorld.GAME.itemsSucked+extra < Vacuum.MAX_ITEMS*Game.bonusCapacity
+    return Game.itemsSucked+extra < Vacuum.MAX_ITEMS*Game.bonusCapacity

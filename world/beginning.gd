@@ -1,4 +1,5 @@
 extends Node3D
+class_name Beginning
 
 var state = 0
 var charTimer = 0
@@ -14,51 +15,53 @@ func _input(event: InputEvent) -> void:
         quicker = 1
 
     match state:
-        0:
+        2:
             if event.is_action_pressed('jump'):
-                hideLabel($UnoCamera/CanvasLayer/StartLabel)\
-                .callback(func(): state += 1)
+                $UnoCamera/CanvasLayer/Text1.visible = false
+                $UnoCamera/CanvasLayer/Text2.visible = true
+                currentText = $UnoCamera/CanvasLayer/Text2.text;
+                $UnoCamera/CanvasLayer/Text2.text = '';
+                charTimer = TIME_BETWEEN_CHARS;
+                hideLabel($UnoCamera/CanvasLayer/Continue)
+                state += 1
         4:
             if event.is_action_pressed('jump'):
-                hideLabel($UnoCamera/CanvasLayer/Continue)\
-                .callback(
-                    func():
-                        state += 1
-                        $UnoCamera/CanvasLayer/Text1.visible = false
-                        $UnoCamera/CanvasLayer/Text2.visible = true
-                        currentText = $UnoCamera/CanvasLayer/Text2.text;
-                        $UnoCamera/CanvasLayer/Text2.text = '';
-                        charTimer = TIME_BETWEEN_CHARS
-                )
+                $UnoCamera/CanvasLayer/Text2.visible = false
+                $UnoCamera/CanvasLayer/Text3.visible = true
+                currentText = $UnoCamera/CanvasLayer/Text3.text;
+                $UnoCamera/CanvasLayer/Text3.text = '';
+                charTimer = TIME_BETWEEN_CHARS;
+                hideLabel($UnoCamera/CanvasLayer/Continue)
+                state += 1
         6:
             if event.is_action_pressed('jump'):
-                $UnoCamera/CanvasLayer/Text2.visible = true
+                hideLabel($UnoCamera/CanvasLayer/Text3)
                 hideLabel($UnoCamera/CanvasLayer/Continue).callback(
                     func():
                         UnoTween.new()\
                         .setTrans(Tween.TRANS_CUBIC)\
                         .property($UnoCamera, 'rotation_degrees:y', -45, 1)\
-                        .callback(func(): $UnoCamera.fadeOut().callback(func(): get_tree().change_scene_to_packed(preload('res://game/scenes/game_tutorial.scn')))))
+                        .callback(func(): $UnoCamera.fadeOut().callback(func(): get_tree().change_scene_to_packed(preload('res://game/scenes/game.scn')))))
 
 func _process(delta: float) -> void:
     charTimer -= delta * quicker
     match state:
-        1:
+        0:
             state = -1
             UnoTween.new()\
-                .setTrans(Tween.TRANS_CUBIC)\
-                .property($UnoCamera, 'global_position:z', 10, 1)\
-                .callback(func(): currentText = $UnoCamera/CanvasLayer/Text1.text; $UnoCamera/CanvasLayer/Text1.text = ''; state = 3)
-        3:
+                    .setTrans(Tween.TRANS_CUBIC)\
+                    .property($UnoCamera, 'global_position:z', 10, 1)\
+                    .callback(func(): currentText = $UnoCamera/CanvasLayer/Text1.text; $UnoCamera/CanvasLayer/Text1.text = ''; charTimer = TIME_BETWEEN_CHARS; state = 1)
+        1:
             if charTimer <= 0:
-                $UnoCamera/CanvasLayer/Text1.visible = true
                 $UnoCamera/CanvasLayer/Text1.text += currentText[0]
+                $UnoCamera/CanvasLayer/Text1.visible = true
                 charTimer = TIME_BETWEEN_CHARS
                 currentText = currentText.substr(1)
                 if currentText.length() == 0:
-                    state += 1
+                    state = 2
                     showLabel($UnoCamera/CanvasLayer/Continue)
-        5:
+        3:
             if charTimer <= 0:
                 $UnoCamera/CanvasLayer/Text2.text += currentText[0]
                 charTimer = TIME_BETWEEN_CHARS
@@ -66,6 +69,15 @@ func _process(delta: float) -> void:
                 if currentText.length() == 0:
                     state += 1
                     showLabel($UnoCamera/CanvasLayer/Continue)
+        5:
+            if charTimer <= 0:
+                $UnoCamera/CanvasLayer/Text3.text += currentText[0]
+                charTimer = TIME_BETWEEN_CHARS
+                currentText = currentText.substr(1)
+                if currentText.length() == 0:
+                    state += 1
+                    showLabel($UnoCamera/CanvasLayer/Continue)
+
 
 func showLabel(node) -> UnoTween:
     return UnoTween.new()\
