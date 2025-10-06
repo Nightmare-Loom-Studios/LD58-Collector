@@ -45,13 +45,16 @@ func _process(delta: float) -> void:
             UnoWorld.PLAYER.get_node('VaccumArea').get_node('GPUParticles3D').emitting = true
             UnoWorld.CAMERA.shake(UnoCamera.SHAKE_AMPL_MEDIUM, UnoCamera.SHAKE_SPEED_QUICK, 2)
             var suckedCount: int = 0
+            var sound = 0
             for body in get_overlapping_bodies():
                 if body.is_in_group('gatherable') and canSuckAgain(suckedCount):
                     suckedCount += 1
+                    sound += 1
                     body.emit_signal('gathered')
 
-                    onSuckPlayer = UnoAudio.playSound(soundSuck.pick_random(), self, 15)
-                    onSuckPlayer.connect('finished', func(): onSuckPlayer = null)
+                    if sound < 2:
+                        onSuckPlayer = UnoAudio.playSound(soundSuck.pick_random(), self, 15)
+                        onSuckPlayer.connect('finished', func(): onSuckPlayer = null)
 
             UnoCamera.HUD.emit_signal('add_vacuum', suckedCount) if suckedCount > 0 else null
 

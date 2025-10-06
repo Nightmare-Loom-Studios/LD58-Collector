@@ -18,12 +18,8 @@ func _process(delta: float) -> void:
                     for node in UnoWorld.ROOT.get_children():
                         node.queue_free()
                     Engine.time_scale = 1;
-                    print(Game.money)
-                    print(Game.targetMoney)
-                    if Game.money >= Game.targetMoney:
-                         get_tree().change_scene_to_packed(load('res://game/world/Ending.scn'))
-                    else:
-                        UnoWorld.ROOT.add_child(preload('res://game/scenes/level_safe.tscn').instantiate())
+                    
+                    UnoWorld.ROOT.add_child(preload('res://game/scenes/level_safe.tscn').instantiate())
                     Engine.time_scale = 1;
                     UnoWorld.CAMERA.fadeIn()
             )
@@ -37,7 +33,9 @@ func _addMoney(val) -> void:
         .setTrans(Tween.TRANS_CUBIC)\
         .method(func(val): $Money.text = '$'+str(int(val))+' /$'+str(Game.targetMoney), UnoWorld.GAME.money, UnoWorld.GAME.money+val, 1)
 
-    UnoWorld.GAME.money += val
+    Game.money += val
+    if Game.money >= Game.targetMoney:
+         get_tree().change_scene_to_packed(load('res://game/world/Ending.scn'))
 
 func _addVacuum(val) -> void:
     var frac = (Game.itemsSucked+val)/(Vacuum.MAX_ITEMS*Game.bonusCapacity)
