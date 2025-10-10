@@ -4,9 +4,9 @@ class_name Vacuum
 static var MAX_ITEMS = 8
 var cashbagPrefab: PackedScene = preload('res://game/entities/valuables/heavy/cashbag.scn')
 
-var soundOn = preload('res://game/audio/AspiOn.wav')
+@onready var soundOn = preload('res://game/audio/AspiOn.ogg')
 var onSoundPlayer: AudioStreamPlayer3D = null
-var soundSuck = [preload('res://game/audio/AspiSuck1.wav'), preload('res://game/audio/AspiSuck2.wav'), preload('res://game/audio/AspiSuck3.wav')]
+@onready var soundSuck = [preload('res://game/audio/AspiSuck1.ogg'), preload('res://game/audio/AspiSuck2.ogg'), preload('res://game/audio/AspiSuck3.ogg')]
 var onSuckPlayer: AudioStreamPlayer3D = null
 
 func _ready() -> void:
