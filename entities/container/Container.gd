@@ -6,7 +6,7 @@ signal hitted
 @export var valuables: Array[PackedScene] = []
 @export var number: int = 1
 
-var sound = [preload('res://game/audio/Tiroir1.wav'), preload('res://game/audio/Tiroir2.wav')]
+@onready var sound = [preload('res://game/audio/Tiroir1.ogg'), preload('res://game/audio/Tiroir2.ogg')]
 
 func _ready() -> void:
     add_to_group('hittable')

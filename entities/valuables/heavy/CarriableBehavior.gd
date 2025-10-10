@@ -8,9 +8,9 @@ signal sell
 var isCarried: bool = false
 var originalCollisionlayer = 0
 
-static var audioLight = preload('res://game/audio/PaySmall.wav')
-static var audioMedium = preload('res://game/audio/PayAverage.wav')
-static var audioHeavy = preload('res://game/audio/PayBig.wav')
+@onready var audioLight = preload('res://game/audio/PaySmall.ogg')
+@onready var audioMedium = preload('res://game/audio/PayAverage.ogg')
+@onready var audioHeavy = preload('res://game/audio/PayBig.ogg')
 static var sellParticule = preload('res://game/entities/earn_area/dollar_particles.scn')
 
 @export var value: float = 1;
